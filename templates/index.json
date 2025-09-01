@@ -1106,7 +1106,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<p>🖼️ MASTER PIECES </p>",
+                "text": "<p>MASTER PIECES </p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1300,6 +1300,7 @@
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "masterpieces",
+        "tylt_icon_categorie": "shopify://shop_images/Plan_de_travail_12_copie_11_2x_8010f1c2-0f50-4b74-a1bc-f60ffe6bee0a.png",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 7,
