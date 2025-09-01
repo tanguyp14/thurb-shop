@@ -1,6 +1,9 @@
-.icon_tylt{
-    display: flex;
+.icon_tylt {
+  display: flex;
+  height: 100%;
+  span {
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
+  }
 }
