@@ -433,7 +433,7 @@
         "tylt_icon_categorie": "shopify://shop_images/ECLAIR.svg",
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "max_products": 6,
+        "max_products": 16,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
