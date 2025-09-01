@@ -1,0 +1,262 @@
+.section-header {
+    background-color: #000;
+
+    sticky-header {
+        &.data-tylt {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+
+            .header {
+                grid-template-columns: 160px auto 200px 40px;
+
+                @media screen and (max-width: 989px) {
+                    grid-template-columns: 1fr 70px 1fr;
+
+                }
+
+                &__heading {
+                    grid-row: 1;
+                    grid-column: 1;
+
+                    @media screen and (max-width: 989px) {
+                        grid-column: 2;
+                        grid-row: 1;
+                    }
+                }
+
+                &__heading-link {
+                    grid-column: 1;
+                    grid-row: 1;
+                    display: grid;
+                    max-height: 40px;
+                    padding: 2.2rem;
+
+                    &:hover {
+                        img {
+                            rotate: -5deg;
+                        }
+                    }
+
+                    div {
+                        margin-top: -30px;
+
+                        img {
+                            transition: rotate 1s ease-out;
+                        }
+                    }
+
+                    @media screen and (max-width: 989px) {
+                        grid-column: 2;
+                        grid-row: 1;
+                        height: 40px;
+                        padding: 0rem;
+                        display: flex;
+
+                        div {
+                            height: 100%;
+                            padding: 0px;
+                            margin-top: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                max-height: 60px;
+                                max-width: 60px;
+                            }
+                        }
+                    }
+                }
+
+                &__inline-menu {
+                    grid-column: 2;
+                    grid-row: 1;
+
+                    span {
+                        text-transform: uppercase;
+                        font-style: normal;
+                    }
+
+                    details {
+                        &[open] {
+                            summary {
+                                span {
+                                    color: $orange;
+                                }
+                            }
+                        }
+                    }
+
+                    ul {
+                        li {
+                            div {
+                                z-index: 1000;
+                                border-radius: 20px;
+                                width: 60vw;
+                                left: 20vw;
+                                margin-top: -20px;
+
+                                ul {
+                                    display: grid;
+                                    grid-template-columns: 20% 20% 30% 30%;
+                                    gap: 10px;
+
+                                    li {
+                                        width: 100%;
+                                        padding: 0;
+
+                                        &:has(ul) {
+                                            >a {
+                                                background-color: #000;
+                                                color: white;
+                                                border-radius: 30px;
+                                                width: fit-content;
+                                                padding: 5px 15px;
+                                                text-decoration: none;
+                                                margin-bottom: 10px;
+                                                font-weight: 500;
+
+                                                &:hover {
+                                                    text-decoration: none;
+                                                    cursor: default;
+                                                }
+                                            }
+                                        }
+
+                                        ul {
+                                            display: flex;
+                                            flex-direction: column;
+
+                                            li {
+                                                margin-left: 10px;
+                                                transition: all ease-in-out 0.3s;
+
+                                                &:hover {
+                                                    padding-left: 5px;
+
+                                                    a {
+                                                        opacity: 1;
+                                                        font-weight: 500;
+                                                    }
+                                                }
+
+                                                a {
+                                                    padding: 0px;
+                                                    opacity: 0.8;
+                                                    transition: all ease-in-out 0.3s;
+                                                    font-style: normal;
+                                                    font-weight: 400;
+
+                                                    &.mega-menu__link--active {
+                                                        padding-left: 5px;
+                                                        font-weight: 300;
+                                                        opacity: 1;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        &.last-items {
+                                            align-self: start;
+
+                                            a {
+                                                display: flex;
+                                                flex-direction: column;
+                                                font-size: 20px;
+                                                font-weight: 400;
+
+                                                .image_menu_tylt {
+                                                    width: 100%;
+                                                    overflow: hidden;
+                                                    display: flex;
+
+                                                    img {
+                                                        width: 100%;
+                                                        transition: all ease-in-out 1s;
+                                                    }
+                                                }
+
+                                                &:hover {
+                                                    .image_menu_tylt {
+                                                        img {
+                                                            scale: 1.1;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            &:nth-of-type(1) {
+                                                grid-column: 3;
+                                            }
+
+                                            &:nth-of-type(2) {
+                                                grid-column: 4;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+
+                &__search {
+                    grid-column: 4;
+                    grid-row: 1;
+                }
+
+                .search-modal {
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                }
+
+                &__icon--account {
+                    &:hover {
+                        path {
+                            fill: $orange;
+                        }
+                    }
+
+                    path {
+                        fill: black;
+                    }
+                }
+
+                &__icon--cart {
+                    &:hover {
+                        .icon {
+                            path {
+                                fill: $orange;
+                            }
+                        }
+                    }
+
+                    .icon {
+                        width: 2rem;
+                        height: 2rem;
+
+                        path {
+                            fill: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.shopify-section-header-hidden {
+    sticky-header {
+        &.data-tylt {
+            .header {
+
+                &__heading,
+                &__heading-link {
+                    display: none;
+                }
+            }
+        }
+    }
+}

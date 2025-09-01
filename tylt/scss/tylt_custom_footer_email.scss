@@ -1,0 +1,121 @@
+.tylt_custom_footer_email {
+    background-color: #000;
+    height: 30vh;
+    min-height: 400px;
+    display: flex;
+    padding: 90px 50px 5px 50px;
+    flex-wrap: wrap;
+
+    @include breakpoints(sm, max) {
+        padding: 90px 20px 5px 20px;
+    }
+
+    &__container_left {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        h3 {
+            color: white;
+            text-transform: uppercase;
+            font-size: 30px;
+            margin: 0;
+            letter-spacing: normal;
+            padding: 0;
+            line-height: 30px;
+
+            &.newsletter-form__message {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            color: #FFBF20;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+            letter-spacing: normal;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        &__form {
+            max-width: 400px;
+        }
+    }
+
+    &__bottom {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+        gap: 5px;
+
+        &__menu {
+            width: 100%;
+            color: white;
+            align-self: flex-end;
+            height: fit-content;
+
+            ul {
+                justify-content: center;
+                padding: 0;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                margin: 0;
+                gap: 0px 1em;
+
+                li {
+                    list-style-type: none;
+
+                    a {
+                        color: white;
+                        font-size: 12px;
+                        letter-spacing: normal;
+                        font-weight: 300;
+                        padding: 0;
+
+                        &:hover,
+                        &:visited {
+                            color: white;
+                            text-decoration: underline;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        &__sign {
+            color: white;
+            font-size: 10px;
+            letter-spacing: normal;
+            font-weight: 300;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: 100%;
+            height: 12px;
+            align-self: flex-end;
+            font-style: italic;
+
+            a {
+                color: white;
+
+                &:hover,
+                &:visited {
+                    color: white;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+}

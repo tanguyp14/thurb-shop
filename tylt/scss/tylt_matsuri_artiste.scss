@@ -1,0 +1,138 @@
+$rose: #F5728E;
+$blue: #4398E5;
+$yellow: #EFB303;
+
+
+.tylt_matsuri_artiste {
+    background-color: $beige;
+    padding-top: 50px;
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        padding: 0% 20%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        letter-spacing: normal;
+        font-weight: 200;
+        line-height: normal;
+
+        @include breakpoints(sm, max) {
+            padding: 0% 10%;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin: 0;
+            text-transform: uppercase;
+            color: $rose;
+        }
+
+    }
+
+    &__artistes {
+        display: grid;
+        grid-template: auto / repeat(auto-fit, minmax(220px, 1fr));
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+        padding: 10% 10%;
+
+        @include breakpoints(lg, max) {
+            padding: 10% 20px;
+        }
+
+        &__item {
+            &__inner {
+                width: 100%;
+                min-width: 220px;
+                display: flex;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: $rose;
+                box-shadow: 0px 0px 20px #ffffff3b;
+                transition: all 0.2s ease-in-out;
+                justify-content: center;
+                align-items: center;
+                scale: 1;
+
+                &:hover {
+                    scale: 1.05;
+                }
+
+                &.Artiste {
+                    background-color: $blue;
+
+                    &:hover {
+                        box-shadow: 0px 10px 20px rgba($blue, 0.2);
+                    }
+                }
+
+                &.Artisant {
+                    background-color: $rose;
+
+                    &:hover {
+                        box-shadow: 0px 10px 20px rgba($rose, 0.2);
+                    }
+                }
+
+                &.Gastronomie {
+                    background-color: $yellow;
+
+                    &:hover {
+                        box-shadow: 0px 10px 20px rgba($yellow, 0.2);
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    img {
+                        width: 100%;
+                        aspect-ratio: 1 / 1;
+                        object-fit: cover;
+                        border-radius: 5px;
+                        background-color: white;
+                        object-fit: contain;
+                        object-position: center center;
+                    }
+
+                    .name {
+                        color: white;
+                        font-weight: 500;
+                        font-size: 1.2em;
+                        text-transform: uppercase;
+                        text-align: center;
+                        width: 100%;
+                        margin: 5px 0;
+                        letter-spacing: normal;
+                        white-space: nowrap;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                    }
+
+                    .info {
+                        color: white;
+                        font-weight: 500;
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        width: 100%;
+                        letter-spacing: normal;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+    }
+}

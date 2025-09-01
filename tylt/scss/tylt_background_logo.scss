@@ -1,0 +1,63 @@
+.tylt_background_logo{
+    display: flex;
+    padding: 50px 0 80px 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    @include breakpoints(sm, max){
+        padding: 90px 0;
+    }
+    &__op{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        z-index: 1;
+            bottom: 0;
+    }
+    &__grid{
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        @include breakpoints(sm, max){
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            
+        }
+        &__item{
+            display: grid;
+            grid-template-columns: 70px 200px;
+            grid-template-rows: 64px 20px;
+            column-gap: 5px;
+            span{
+                grid-row: 1 / 3;
+                grid-column: 1;
+                background-repeat: no-repeat;
+                background-size: 60px 60px;
+                background-position: center center;
+            }
+            h4{
+                text-transform: uppercase;
+                color: white;
+                margin: 0;
+                letter-spacing: normal;
+                font-size: 30px;
+                text-wrap: wrap;
+                line-height: 32px;
+            }
+            p{
+                color: $orange;
+                letter-spacing: normal;
+                margin: 0;
+                font-size: 15px;
+                line-height: 15px;
+                font-weight: 400;
+            }
+        }
+    }
+}

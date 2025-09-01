@@ -1,0 +1,26 @@
+#hats_free_shipping {
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: white;
+    background-color: #000;
+    div {
+        margin: auto;
+        max-width: 80%;
+        padding: 5px 0px;
+        &.free {
+            animation: move infinite alternate 1s ease-in-out;
+        }
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}

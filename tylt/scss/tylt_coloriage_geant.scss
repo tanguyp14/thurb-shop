@@ -1,0 +1,119 @@
+.tylt_coloriage_geant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+          background-size: 100% auto;
+  background-position: 0vh 110%;
+  padding: 0px 0px 13vh;
+  background-color: transparent;
+  background-color: $beige;
+  overflow: hidden;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__texte_haut {
+      position: relative;
+      color: rgb(var(--color-foreground));
+      font-size: clamp(1.5em, 7vw, 8em);
+      text-transform: uppercase;
+      font-weight: 200;
+      width: 90vw;
+      overflow: visible;
+      text-align: center;
+      z-index: 100;
+      text-wrap: nowrap;
+      span {
+        position: relative;
+        font-weight: 700;
+        animation: grand infinite 10s ease-in-out;
+      }
+    }
+    &__button {
+      padding: 5px 30px;
+      background-color: #f5728e;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 30px;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 10vh;
+      border: 1px solid #f5728e;
+      &:hover {
+        background-color: lighten(#f5728e, 10%);
+      }
+      span {
+        position: relative;
+        font-weight: 700;
+        animation: grand infinite 10s ease-in-out;
+        animation-delay: 3s;
+      }
+    }
+    &__image {
+      position: relative;
+      width: 90vw;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &__icon {
+        position: absolute;
+        right: -70px;
+        top: -40px;
+        width: 150px;
+        height: 150px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 10;
+        animation: rotate infinite 2s linear;
+        @include breakpoints(sm, max) {
+          width: 100px;
+          height: 100px;
+          right: -20px;
+          top: -20px;
+        }
+      }
+      &__image_centrale {
+        width: 100%;
+        box-shadow: 0px 0px 20px #0000003b;
+        border: 2px solid rgb(var(--color-foreground));
+        aspect-ratio: 4/3;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@keyframes grand {
+  0% {
+    letter-spacing: normal;
+    color: inherit;
+  }
+  10% {
+    letter-spacing: 0.2em;
+    color: lighten(rgb(19, 18, 18), 10%);
+  }
+  15% {
+    letter-spacing: normal;
+    color: inherit;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  10% {
+    rotate: 5deg;
+  }
+  15% {
+    rotate: 0deg;
+  }
+}

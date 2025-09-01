@@ -1,0 +1,54 @@
+.hats_storedecks_bottom {
+    height: 1px;
+    z-index: 3;
+    position: relative;
+    max-width: 100vw;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        overflow-x: clip;
+
+        span {
+            bottom: 10vh;
+            left: -20vw;
+            height: 20vh;
+            position: absolute;
+            width: 15vw;
+            min-width: 30px;
+            animation: storedeck_u 5s infinite ease-in-out alternate;
+            transform-origin: right center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            scale: -1 1;
+
+            &:nth-child(1) {
+                bottom: 25vh;
+                right: -20vw;
+                height: 30vh;
+                left: unset;
+                animation-duration: 7s;
+                transform-origin: left center;
+            }
+        }
+    }
+}
+
+@keyframes storedeck_u {
+    0% {
+        transform: skew(1deg);
+    }
+
+    100% {
+        transform: skew(-1deg);
+        
+    }
+
+}
