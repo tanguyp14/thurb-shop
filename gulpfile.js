@@ -5,50 +5,83 @@ const fs = require('fs');
 const path = require('path');
 const sourcemaps = require('gulp-sourcemaps');
 
+// Configuration
 const scssSourceDir = './tylt/scss/';
 const outputFile = './tylt/scss/all.scss';
 const outputCssDir = './assets/';
 
+// Variable pour éviter les exécutions multiples
+let isRunning = false;
+
+// Génère le fichier all.scss avec les imports
 function generateImports(done) {
-    console.log('Début de la génération de _all.scss...');
+    if (isRunning) {
+        done();
+        return;
+    }
+
+    console.log('Génération de all.scss...');
     fs.readdir(scssSourceDir, (err, files) => {
         if (err) {
-            console.error('Erreur lors de la lecture du dossier scss :', err);
+            console.error('Erreur lecture dossier SCSS:', err);
             done(err);
             return;
         }
 
-        const scssFiles = files.filter(file => file.endsWith('.scss') && file !== path.basename(outputFile));
-        const importStatements = scssFiles.map(file => `@use '${file}';`).join('\n');
+        const scssFiles = files
+            .filter(file => file.endsWith('.scss') && file !== path.basename(outputFile))
+            .map(file => `@use '${file}' as *;`);
 
-        fs.writeFile(outputFile, importStatements, (err) => {
+        fs.writeFile(outputFile, scssFiles.join('\n'), err => {
             if (err) {
-                console.error('Erreur lors de l\'écriture du fichier all.scss :', err);
+                console.error('Erreur écriture all.scss:', err);
                 done(err);
                 return;
             }
-            console.log('Fichier _all.scss généré avec succès.');
+            console.log('all.scss généré avec succès');
             done();
         });
     });
 }
 
-function buildStyles() {
-    console.log('Début de la compilation de style.css...');
-    return gulp
-        .src(outputFile) // Utilisation de _all.scss comme fichier source
-        .pipe(sourcemaps.init()) // Initialisation des sourcemaps
-        .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
-        .pipe(rename('style.css'))
-        .pipe(sourcemaps.write('./')) // Écriture des sourcemaps dans le dossier courant
-        .pipe(gulp.dest(outputCssDir)) // Destination du fichier compilé
-        .on('end', () => console.log('Compilation de style.css terminée.'));
+// Compile le SCSS en CSS
+function buildStyles(done) {
+    if (isRunning) {
+        done();
+        return;
+    }
+    isRunning = true;
+
+    console.log('Compilation CSS en cours...');
+    gulp.src(outputFile)
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed',
+            implementation: require('sass')
+        }).on('error', sass.logError))
+        .pipe(rename('style.min.css'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(outputCssDir))
+        .on('end', () => {
+            isRunning = false;
+            done();
+            console.log('Compilation terminée');
+        });
 }
 
-gulp.task('scss', gulp.series(generateImports, buildStyles));
+// Tâche principale
+const scssTask = gulp.series(generateImports, buildStyles);
 
-gulp.task('watch', function () {
-    gulp.watch([`${scssSourceDir}/**/*.scss`, `!${outputFile}`], gulp.series('scss'));
-});
+function watch() {
+    // Utilisation de ignoreInitial pour éviter le déclenchement initial
+    gulp.watch(
+        [`${scssSourceDir}/**/*.scss`, `!${outputFile}`],
+        { ignoreInitial: false },
+        scssTask
+    );
+}
 
-gulp.task('default', gulp.series('scss', 'watch'));
+// Export des tâches (méthode moderne)
+exports.scss = scssTask;
+exports.watch = watch;
+exports.default = gulp.series(scssTask, watch);

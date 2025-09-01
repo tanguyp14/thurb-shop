@@ -1,2 +1,2 @@
-@import 'aa_variables.scss';
-@import 'tylt_categories.scss';
+@use 'aa_variables.scss' as *;
+@use 'tylt_categories.scss' as *;
