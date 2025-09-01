@@ -34,7 +34,7 @@ function generateImports(done) {
 }
 
 function buildStyles() {
-    console.log('Début de la compilation de style.min.css...');
+    console.log('Début de la compilation de style.css...');
     return gulp
         .src(outputFile) // Utilisation de _all.scss comme fichier source
         .pipe(sourcemaps.init()) // Initialisation des sourcemaps
@@ -42,7 +42,7 @@ function buildStyles() {
         .pipe(rename('style.css'))
         .pipe(sourcemaps.write('./')) // Écriture des sourcemaps dans le dossier courant
         .pipe(gulp.dest(outputCssDir)) // Destination du fichier compilé
-        .on('end', () => console.log('Compilation de style.min.css terminée.'));
+        .on('end', () => console.log('Compilation de style.css terminée.'));
 }
 
 gulp.task('scss', gulp.series(generateImports, buildStyles));
