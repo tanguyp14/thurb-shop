@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const targetText = 'FIRSTLOVE MARKET 💙';
     
     function animateLink() {
-        document.querySelectorAll('.menu-list__link-title').forEach(function (link) {
+        document.querySelectorAll('nav a span').forEach(function (link) {
             const cleanText = link.textContent.trim().replace(/\s+/g, '').toUpperCase();
             const cleanTarget = targetText.replace(/\s+/g, '').toUpperCase();
 
