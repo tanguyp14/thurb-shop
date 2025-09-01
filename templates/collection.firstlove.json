@@ -624,7 +624,7 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
-        "collection": "firstlove-market",
+        "collection": "fl-carte-postale",
         "tylt_icon_categorie": "shopify://shop_images/TIMBRE.svg",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -685,7 +685,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Les coups de foudre</h3>",
+                "text": "<h3>GOODIES</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -819,7 +819,7 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
-        "collection": "firstlove-market",
+        "collection": "fl-goodies",
         "tylt_icon_categorie": "shopify://shop_images/COEUR.svg",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
