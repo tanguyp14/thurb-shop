@@ -10,5 +10,19 @@
     background-position: center center;
     height: 50px;
     aspect-ratio: 1 / 1;
+    animation: rotateZoom 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    position: relative;
   }
+}
+@keyframes rotateZoom {
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    10%{
+        transform: rotate(-5deg) scale(1.1);
+    }
+    20%{
+        transform: rotate(0deg) scale(1);
+    }
+    
 }
