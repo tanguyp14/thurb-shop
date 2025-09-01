@@ -19,20 +19,15 @@ function generateImports(done) {
         }
 
         const scssFiles = files.filter(file => file.endsWith('.scss') && file !== path.basename(outputFile));
-        
-        // ✅ @use avec 'as *' pour garder l'espace global
-        const useStatements = scssFiles.map(file => {
-            const fileName = file.replace('.scss', '');
-            return `@use '${fileName}' as *;`;
-        }).join('\n');
+        const importStatements = scssFiles.map(file => `@use '${file}';`).join('\n');
 
-        fs.writeFile(outputFile, useStatements, (err) => {
+        fs.writeFile(outputFile, importStatements, (err) => {
             if (err) {
                 console.error('Erreur lors de l\'écriture du fichier all.scss :', err);
                 done(err);
                 return;
             }
-            console.log('Fichier _all.scss généré avec succès (avec @use as *).');
+            console.log('Fichier _all.scss généré avec succès.');
             done();
         });
     });
