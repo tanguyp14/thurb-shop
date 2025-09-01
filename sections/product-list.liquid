@@ -1,5 +1,3 @@
-
-
 {% liquid
   assign max_items = section.settings.max_products
 
@@ -41,7 +39,18 @@
   "
 >
   <div class="section-resource-list__header">
+    {% if section.settings.tylt_icon_categorie != blank %}
+      <div class="icon_tylt">
+        <span
+          class="icon icon--tylt"
+          style="background-image: url('{{ section.settings.tylt_icon_categorie | image_url }}'); display: inline-block; background-size: contain; background-repeat: no-repeat; width: 40px; height: 40px;"
+          aria-label="Icon Categorie"
+        ></span>
+    {% endif %}
     {%- content_for 'block', type: '_product-list-content', id: 'static-header' -%}
+    {% if section.settings.tylt_icon_categorie != blank %}
+      </div>
+    {% endif %}
   </div>
 
   {% capture list_items %}
@@ -170,6 +179,11 @@
       "type": "collection",
       "id": "collection",
       "label": "t:settings.collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "tylt_icon_categorie",
+      "label": "Icon Categorie"
     },
     {
       "type": "select",
