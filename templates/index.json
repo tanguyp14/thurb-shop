@@ -171,7 +171,7 @@
             "color_scheme": "scheme-5",
             "background_media": "image",
             "video_position": "cover",
-            "background_image": "shopify://shop_images/FOND_BLEU.svg",
+            "background_image": "shopify://shop_images/FOND_BLEU_6adc3235-4b7a-4719-a4ae-8d3d08f15176.svg",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
@@ -209,10 +209,10 @@
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
+                "width": "custom",
+                "custom_width": 54,
+                "width_mobile": "custom",
+                "custom_width_mobile": 55
               },
               "blocks": {}
             },
@@ -272,7 +272,7 @@
             "background_media": "image",
             "video": "shopify://files/videos/0430 (1).mov",
             "video_position": "cover",
-            "background_image": "shopify://shop_images/logo_thurbshop_b.png",
+            "background_image": "shopify://shop_images/carte2_17650a69-00e9-4647-860e-9563c540be7d.png",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
@@ -338,7 +338,7 @@
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "custom",
-                "custom_width_mobile": 72
+                "custom_width_mobile": 41
               },
               "blocks": {}
             }
@@ -1360,7 +1360,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>🏠 HOME</h3>",
+                "text": "<h3>HOME</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1554,6 +1554,7 @@
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "home",
+        "tylt_icon_categorie": "shopify://shop_images/SITETITRE-16_12b58944-3d67-4b22-a288-4045c2bb498c.png",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 5,
