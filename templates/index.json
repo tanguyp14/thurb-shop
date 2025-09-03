@@ -273,7 +273,7 @@
             "background_media": "image",
             "video": "shopify://files/videos/0430 (1).mov",
             "video_position": "cover",
-            "background_image": "shopify://shop_images/FL3.png",
+            "background_image": "shopify://shop_images/FLBANN.png",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
@@ -295,7 +295,7 @@
               "settings": {
                 "size": "pixel",
                 "percent_size": 100,
-                "pixel_size": 56,
+                "pixel_size": 132,
                 "custom_mobile_size": false,
                 "size_mobile": "percent",
                 "percent_size_mobile": 100,
@@ -336,7 +336,7 @@
                 "link": "shopify://collections/firstlove-market",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
-                "width": "fit-content",
+                "width": "custom",
                 "custom_width": 100,
                 "width_mobile": "custom",
                 "custom_width_mobile": 41
@@ -691,6 +691,20 @@
         "gradient_direction": "to top",
         "padding-block-start": 0,
         "padding-block-end": 0
+      }
+    },
+    "divider_dT3QUK": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "section_width": "full-width",
+        "thickness": 2.5,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
       }
     },
     "marquee_kjnjWD": {
@@ -2974,6 +2988,7 @@
     "hero_iLBwPd",
     "marquee_b3tbjz",
     "section_HFceGd",
+    "divider_dT3QUK",
     "marquee_kjnjWD",
     "product_list_8FTidh",
     "product_list_NhJeJD",
