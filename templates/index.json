@@ -209,7 +209,7 @@
                 "label": "VOIR THURBSHOP",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
-                "style_class": "button-secondary",
+                "style_class": "button",
                 "width": "custom",
                 "custom_width": 55,
                 "width_mobile": "custom",
@@ -295,7 +295,7 @@
               "settings": {
                 "size": "pixel",
                 "percent_size": 100,
-                "pixel_size": 132,
+                "pixel_size": 112,
                 "custom_mobile_size": false,
                 "size_mobile": "percent",
                 "percent_size_mobile": 100,
@@ -335,11 +335,11 @@
                 "label": "VOIR FIRSTLOVE MARKET",
                 "link": "shopify://collections/firstlove-market",
                 "open_in_new_tab": false,
-                "style_class": "button-secondary",
+                "style_class": "button",
                 "width": "custom",
                 "custom_width": 100,
                 "width_mobile": "custom",
-                "custom_width_mobile": 41
+                "custom_width_mobile": 72
               },
               "blocks": {}
             }

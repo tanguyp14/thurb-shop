@@ -41,7 +41,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Rejoins la newletter ! </p>",
+                "text": "<p>Rejoins la newsletter pour être informé des nouveautés ! </p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
