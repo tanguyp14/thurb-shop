@@ -11,6 +11,9 @@ body:has(.tylt_fl_top){
   padding: 15vh 0 0;
   font-family: "Dela Gothic One", sans-serif;
   position: relative;
+  @include breakpoints(sm, max){
+    padding: 10vh 0 0;
+  }
   &__clouds {
     position: absolute;
     top: 0;
@@ -37,6 +40,9 @@ body:has(.tylt_fl_top){
       display: flex;
       width: 100vw;
       height:300px;
+      @include breakpoints(sm, max){
+        height: 150px;
+      }
       img{
         width: 100%;
         object-fit: cover;
@@ -75,6 +81,7 @@ body:has(.tylt_fl_top){
       overflow: hidden;
       display: flex;
       align-items: center;
+      margin-bottom: 10vh;
       @include breakpoints(sm, max) {
         height: $heght_letter_mobile;
       }
