@@ -1,10 +1,13 @@
-$height_letter: 12vh;
+$height_letter: 50px;
 
 .tylt_fl_top {
   padding: 10vh 0;
   font-family: "Dela Gothic One", sans-serif;
 
   &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h1 {
       color: #006986;
       text-transform: uppercase;

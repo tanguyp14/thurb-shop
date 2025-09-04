@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, i * delayPerLetter);
       });
 
-      // Disparition vers le haut (0% -> -100%)
+      // Disparition vers le haut (0% -> -100%) + lancement simultané de la ville suivante
       setTimeout(() => {
         spans.forEach((span, i) => {
           setTimeout(() => {
@@ -130,25 +130,24 @@ document.addEventListener('DOMContentLoaded', function() {
           }, i * delayPerLetter);
         });
 
-        // Retour brutal à 100% sans animation + lancement de la ville suivante
+        // Début de la ville suivante avec un léger délai
+        setTimeout(() => {
+          const nextIndex = (cityIndex + 1) % cities.length;
+          animateCity(nextIndex);
+        }, 0); // Léger délai de 0ms après le début de la disparition
+
+        // Retour brutal à 100% sans animation pour la ville actuelle
         setTimeout(() => {
           spans.forEach(span => {
-            span.style.transition = 'none'; // Supprimer l'animation
-            span.style.transform = 'translateY(100%)'; // Retour brutal
+            span.style.transition = 'none';
+            span.style.transform = 'translateY(100%)';
             
-            // Remettre l'animation après un court délai
             setTimeout(() => {
               span.style.transition = 'transform 0.5s ease';
             }, 50);
           });
-
-          // Lancer la ville suivante plus rapidement
-          setTimeout(() => {
-            const nextIndex = (cityIndex + 1) % cities.length;
-            animateCity(nextIndex);
-          }, 200); // Réduit de 100 à 200ms
-        }, 700); // Réduit de 1000 à 500ms
-      },displayTime); // Réduit de 1000 à 500ms
+        }, 700);
+      }, displayTime);
     }
 
     // Démarrer l'animation avec la première ville
@@ -156,5 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
 
 
