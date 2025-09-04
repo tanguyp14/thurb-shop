@@ -74,54 +74,87 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialisation de Textillate pour chaque ville
-    $('.tylt_fl_top__text__cities__city').each(function() {
-      $(this).textillate({
-        loop: false, // Pas de boucle pour une seule ville
-        minDisplayTime: 2000, // Temps d'affichage minimum (ms)
-        initialDelay: 0,
-        autoStart: false,
-        in: {
-          effect: 'fadeInLeft', // Animation d'entrée (gauche à droite)
-          delayScale: 1.5,
-          delay: 50,
-          sync: false,
-          shuffle: false
-        }
-      });
+document.addEventListener('DOMContentLoaded', function() {
+  const cities = [
+    {% for block in section.blocks %}
+      {% if block.type == 'text_block' %}
+        "{{ block.settings.ville_name }}"{% unless forloop.last %},{% endunless %}
+      {% endif %}
+    {% endfor %}
+  ];
+
+  const displayContainer = document.querySelector('.tylt_fl_top__text__cities__display');
+
+  if (cities.length > 0 && displayContainer) {
+    // Créer toutes les villes
+    const cityElements = [];
+    cities.forEach(cityName => {
+      const cityDiv = document.createElement('div');
+      cityDiv.className = 'city';
+
+      for (let i = 0; i < cityName.length; i++) {
+        const span = document.createElement('span');
+        span.textContent = cityName[i];
+        span.style.display = 'inline-block';
+        span.style.transform = 'translateY(100%)';
+        span.style.transition = 'transform 0.5s ease';
+
+        cityDiv.appendChild(span);
+      }
+
+      displayContainer.appendChild(cityDiv);
+      cityElements.push({element: cityDiv, name: cityName});
     });
 
-    // Gestion du défilement des villes
-    const cities = $('.tylt_fl_top__text__cities__city');
-    let currentIndex = 0;
+    // Fonction d'animation pour une ville
+    function animateCity(cityIndex) {
+      const city = cityElements[cityIndex];
+      const cityName = city.name;
+      const cityElement = city.element;
+      const spans = cityElement.querySelectorAll('span');
+      const delayPerLetter = 500 / cityName.length;
+      const displayTime = 2000;
 
-    function showNextCity() {
-      // Masquer la ville précédente
-      cities.removeClass('active').css('transform', 'translateY(100%)');
+      // Apparition depuis le bas (100% -> 0%)
+      spans.forEach((span, i) => {
+        setTimeout(() => {
+          span.style.transform = 'translateY(0)';
+        }, i * delayPerLetter);
+      });
 
-      // Afficher la ville courante avec Textillate
-      const currentCity = $(cities[currentIndex]);
-      currentCity.addClass('active').css('transform', 'translateY(0)');
-      currentCity.textillate('start');
-
-      // Passer à la ville suivante après 3 secondes
+      // Disparition vers le haut (0% -> -100%)
       setTimeout(() => {
-        currentIndex = (currentIndex + 1) % cities.length;
-        showNextCity();
-      }, 3000);
+        spans.forEach((span, i) => {
+          setTimeout(() => {
+            span.style.transform = 'translateY(-100%)';
+          }, i * delayPerLetter);
+        });
+
+        // Retour brutal à 100% sans animation + lancement de la ville suivante
+        setTimeout(() => {
+          spans.forEach(span => {
+            span.style.transition = 'none'; // Supprimer l'animation
+            span.style.transform = 'translateY(100%)'; // Retour brutal
+            
+            // Remettre l'animation après un court délai
+            setTimeout(() => {
+              span.style.transition = 'transform 0.5s ease';
+            }, 50);
+          });
+
+          // Lancer la ville suivante plus rapidement
+          setTimeout(() => {
+            const nextIndex = (cityIndex + 1) % cities.length;
+            animateCity(nextIndex);
+          }, 200); // Réduit de 100 à 200ms
+        }, 700); // Réduit de 1000 à 500ms
+      },displayTime); // Réduit de 1000 à 500ms
     }
 
-    // Déclencher au scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          showNextCity();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    observer.observe(document.querySelector('.tylt_fl_top'));
-  });
+    // Démarrer l'animation avec la première ville
+    animateCity(0);
+  }
+});
 </script>
+
+

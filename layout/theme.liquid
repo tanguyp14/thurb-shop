@@ -35,17 +35,6 @@
     {{ content_for_header }}
     {{ 'style.min.css' | asset_url | stylesheet_tag }}
 
-    <!-- Lettering.js (requis pour Textillate) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
-
-    <!-- Animate.css (pour les animations) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <!-- Textillate.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.1/jquery.textillate.min.js"></script>
-
-    <!-- jQuery (si pas déjà chargé) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
