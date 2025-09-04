@@ -49,6 +49,15 @@
 
 <!-- Dans votre section Liquid -->
 <section class="tylt_fl_top" style="background-color:{{ section.settings.bg_color }};">
+  <div class="tylt_fl_top__text">
+    <h1>{{ section.settings.intro_text }}</h1>
+    <!-- Conteneur unique pour les villes -->
+    <div class="tylt_fl_top__text__cities">
+      <div class="tylt_fl_top__text__cities__display">
+        <!-- Les noms de ville seront insérés ici par JavaScript -->
+      </div>
+    </div>
+  </div>
   <div class="tylt_fl_top__clouds">
     {% if section.settings.small_cloud_image %}
       <div class="tylt_fl_top__clouds__small one">
@@ -62,14 +71,12 @@
       </div>
     {% endif %}
   </div>
-  <div class="tylt_fl_top__text">
-    <h1>{{ section.settings.intro_text }}</h1>
-    <!-- Conteneur unique pour les villes -->
-    <div class="tylt_fl_top__text__cities">
-      <div class="tylt_fl_top__text__cities__display">
-        <!-- Les noms de ville seront insérés ici par JavaScript -->
+  <div class="tylt_fl_top__clouds__large">
+    {% if section.settings.large_cloud_image %}
+      <div class="tylt_fl_top__clouds__large one">
+        <img src="{{ section.settings.large_cloud_image | img_url: 'master' }}" alt="Petit Nuage">
       </div>
-    </div>
+    {% endif %}
   </div>
 </section>
 
@@ -153,8 +160,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Démarrer l'animation avec la première ville
     animateCity(0);
   }
+
+ // Nouveau code pour les nuages
+  const clouds = document.querySelectorAll('.tylt_fl_top__clouds__small');
+
+  clouds.forEach((cloud, index) => {
+    // Position top aléatoire initiale entre 5% et 95%
+    const randomTop = Math.random() * 60 + 5;
+    cloud.style.top = randomTop + '%';
+
+    // Position left aléatoire entre 0% et 80%
+    const randomLeft = Math.random() * 80;
+    cloud.style.left = randomLeft + '%';
+
+    // Style de base
+    cloud.style.position = 'absolute';
+
+    // Fonction pour animer un nuage
+    function animateCloud() {
+      // Durée aléatoire entre 7000 et 10000 ms, par pas de 1000 ms
+      const duration = 7000 + Math.floor(Math.random() * 4) * 1000;
+      
+      // Appliquer la transition avec la durée aléatoire
+      cloud.style.transition = `left ${duration}ms linear`;
+      
+      // Aller vers 100% + largeur
+      setTimeout(() => {
+        const cloudWidth = cloud.offsetWidth;
+        cloud.style.left = `calc(100% + ${cloudWidth}px)`;
+
+        // Quand l'animation est terminée, téléporter à 0% et recommencer
+        setTimeout(() => {
+          cloud.style.transition = 'none'; // Supprimer l'animation
+          cloud.style.left = `calc(0% - ${cloudWidth}px)`; // Téléporter à gauche (hors écran)
+
+          // Nouvelle position top aléatoire à chaque cycle
+          const newRandomTop = Math.random() * 60 + 5;
+          cloud.style.top = newRandomTop + '%';
+
+          // Remettre l'animation et relancer
+          setTimeout(() => {
+            animateCloud(); // Relancer l'animation avec une nouvelle durée
+          }, 50);
+        }, duration); // Durée aléatoire de l'animation
+      }, index); // Délai différent pour chaque nuage
+    }
+
+    // Démarrer l'animation
+    animateCloud();
+  });
+
 });
 </script>
-
-
-

@@ -1,13 +1,55 @@
-$height_letter: 50px;
+@use "aa_variables.scss" as *;
+$height_letter: 80px;
+$heght_letter_mobile: 30px;
 
+body:has(.tylt_fl_top){
+   .header__row{
+    background-color: #adf3ff;
+  }
+}
 .tylt_fl_top {
-  padding: 10vh 0;
+  padding: 15vh 0 0;
   font-family: "Dela Gothic One", sans-serif;
-
+  position: relative;
+  &__clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    &__small {
+      &.one {
+        position: absolute;
+        width: 10vw;
+      }
+      &.two {
+        position: absolute;
+        width: 15vw;
+      }
+      &.tree {
+        position: absolute;
+        width: 18vw;
+      }
+    }
+    &__large{
+      display: flex;
+      width: 100vw;
+      height:300px;
+      img{
+        width: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+  }
   &__text {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
     h1 {
       color: #006986;
       text-transform: uppercase;
@@ -16,6 +58,10 @@ $height_letter: 50px;
       font-weight: 200;
       font-size: 50px;
       line-height: 1.2;
+      @include breakpoints(sm, max) {
+        font-size: 20px;
+        max-width: 70vw;
+      }
 
       span {
         display: inline-block;
@@ -29,6 +75,9 @@ $height_letter: 50px;
       overflow: hidden;
       display: flex;
       align-items: center;
+      @include breakpoints(sm, max) {
+        height: $heght_letter_mobile;
+      }
       &__display {
         position: relative;
         display: grid;
@@ -37,12 +86,19 @@ $height_letter: 50px;
         text-transform: uppercase;
         justify-items: center;
         height: $height_letter + $height_letter;
-        .city{
+        @include breakpoints(sm, max) {
+          height: $heght_letter_mobile + $heght_letter_mobile;
+        }
+        .city {
           grid-row: 1;
           grid-column: 1;
           position: relative;
           overflow: hidden;
           font-size: $height_letter;
+          color: #004e65;
+          @include breakpoints(sm, max) {
+            font-size: $heght_letter_mobile;
+          }
         }
       }
     }

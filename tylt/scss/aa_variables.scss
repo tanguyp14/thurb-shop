@@ -1,3 +1,4 @@
+@use "sass:map";
 $breakpoints : (xsm: 600,
     sm: 768,
     md: 960,
@@ -6,13 +7,13 @@ $breakpoints : (xsm: 600,
 
 @mixin breakpoints($breakpoint, $minOrMax: min) {
     @if ($minOrMax ==max) {
-        @media screen and (max-width: #{map-get($breakpoints, $breakpoint) - 1}px) {
+        @media screen and (max-width: #{map.get($breakpoints, $breakpoint) - 1}px) {
             @content;
         }
     }
 
     @else {
-        @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}px) {
+        @media screen and (min-width: #{map.get($breakpoints, $breakpoint)}px) {
             @content;
         }
     }
