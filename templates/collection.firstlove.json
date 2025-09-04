@@ -9,6 +9,102 @@
  */
 {
   "sections": {
+    "tylt_fl_top_ddDmaG": {
+      "type": "tylt_fl_top",
+      "blocks": {
+        "text_block_wtrxwn": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Caen"
+          }
+        },
+        "text_block_y7rHxR": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Amsterdam"
+          }
+        },
+        "text_block_iw6hjj": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Paris"
+          }
+        },
+        "text_block_E7xFM3": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Cherbourg"
+          }
+        },
+        "text_block_R4xQci": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Marrakech"
+          }
+        },
+        "text_block_Qpx8VX": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Toulouse"
+          }
+        },
+        "text_block_GhFgiD": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Montréal"
+          }
+        },
+        "text_block_NMPVcJ": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Nice"
+          }
+        },
+        "text_block_eebnRe": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "barcelone"
+          }
+        },
+        "text_block_8yKLYK": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Vienne"
+          }
+        },
+        "text_block_Gmhk4w": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Athènes"
+          }
+        },
+        "text_block_ihfcmj": {
+          "type": "text_block",
+          "settings": {
+            "ville_name": "Lisbonne"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_wtrxwn",
+        "text_block_y7rHxR",
+        "text_block_iw6hjj",
+        "text_block_E7xFM3",
+        "text_block_R4xQci",
+        "text_block_Qpx8VX",
+        "text_block_GhFgiD",
+        "text_block_NMPVcJ",
+        "text_block_eebnRe",
+        "text_block_8yKLYK",
+        "text_block_Gmhk4w",
+        "text_block_ihfcmj"
+      ],
+      "name": "TYLT - FIRSTLOVE TOP",
+      "settings": {
+        "intro_text": "Quel sera votre premier amour ?",
+        "bg_color": "#D8E3EE"
+      }
+    },
     "1754922440f8368d73": {
       "type": "_blocks",
       "blocks": {
@@ -844,6 +940,7 @@
     }
   },
   "order": [
+    "tylt_fl_top_ddDmaG",
     "1754922440f8368d73",
     "main",
     "product_list_adyhax",
