@@ -1,0 +1,49 @@
+$height_letter: 12vh;
+
+.tylt_fl_top {
+  padding: 10vh 0;
+  font-family: "Dela Gothic One", sans-serif;
+
+  &__text {
+    h1 {
+      color: #006986;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: "Dela Gothic One", sans-serif;
+      font-weight: 200;
+      font-size: 50px;
+    }
+    &__cities {
+      position: relative;
+      min-height: 60px;
+      overflow: hidden;
+      margin-top: 20px;
+      &__city {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        line-height: 60px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #006986;
+        text-transform: uppercase;
+        span {
+          display: inline-block;
+          opacity: 0;
+          transform: translateY(20px);
+          transition:
+            opacity 0.5s ease-out,
+            transform 0.5s ease-out;
+        }
+        &.active {
+          span {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
