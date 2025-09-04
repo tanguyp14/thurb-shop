@@ -73,41 +73,50 @@
   </div>
 </section>
 
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const citiesContainer = document.querySelector('.tylt_fl_top__text__cities__display');
-    const cityNames = [{% for block in section.blocks %}"{{ block.settings.ville_name | escape }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
-
-    cityNames.forEach((name, index) => {
-      const cityElement = document.createElement('div');
-      cityElement.className = 'tylt_fl_top__text__cities__city';
-
-      name.split('').forEach((letter, letterIndex) => {
-        const letterSpan = document.createElement('span');
-        letterSpan.textContent = letter === ' ' ? '\u00A0' : letter; // Gère les espaces
-        letterSpan.style.transitionDelay = `${letterIndex * 0.1}s`;
-        cityElement.appendChild(letterSpan);
+    // Initialisation de Textillate pour chaque ville
+    $('.tylt_fl_top__text__cities__city').each(function() {
+      $(this).textillate({
+        loop: false, // Pas de boucle pour une seule ville
+        minDisplayTime: 2000, // Temps d'affichage minimum (ms)
+        initialDelay: 0,
+        autoStart: false,
+        in: {
+          effect: 'fadeInLeft', // Animation d'entrée (gauche à droite)
+          delayScale: 1.5,
+          delay: 50,
+          sync: false,
+          shuffle: false
+        }
       });
-
-      citiesContainer.appendChild(cityElement);
     });
 
-    const cities = document.querySelectorAll('.tylt_fl_top__text__cities__city');
+    // Gestion du défilement des villes
+    const cities = $('.tylt_fl_top__text__cities__city');
     let currentIndex = 0;
 
     function showNextCity() {
-      cities.forEach(city => city.classList.remove('active'));
-      cities[currentIndex].classList.add('active');
-      currentIndex = (currentIndex + 1) % cities.length;
-      setTimeout(showNextCity, 3000);
+      // Masquer la ville précédente
+      cities.removeClass('active').css('transform', 'translateY(100%)');
+
+      // Afficher la ville courante avec Textillate
+      const currentCity = $(cities[currentIndex]);
+      currentCity.addClass('active').css('transform', 'translateY(0)');
+      currentCity.textillate('start');
+
+      // Passer à la ville suivante après 3 secondes
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % cities.length;
+        showNextCity();
+      }, 3000);
     }
 
-    // Déclenchement au scroll (optionnel)
+    // Déclencher au scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setTimeout(showNextCity, 500);
+          showNextCity();
           observer.unobserve(entry.target);
         }
       });
