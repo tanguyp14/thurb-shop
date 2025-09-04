@@ -628,7 +628,7 @@
       "settings": {
         "collection": "fl-carte-postale",
         "tylt_icon_categorie": "shopify://shop_images/TIMBRE.svg",
-        "layout_type": "grid",
+        "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 16,
         "columns": 4,
