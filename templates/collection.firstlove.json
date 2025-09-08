@@ -892,6 +892,16 @@
         "product": "firstlove-montreal"
       }
     },
+    "tylt_ms_elements_ynKNtc": {
+      "type": "tylt_ms_elements",
+      "name": "TYLT - Movable Solo element",
+      "settings": {
+        "tylt_class": "tylt_thurb_fl_timbre",
+        "button_link": "",
+        "tylt_aos": "fade-right",
+        "icon": "shopify://shop_images/TIMBRE.svg"
+      }
+    },
     "section_6AtJhA": {
       "type": "section",
       "blocks": {
@@ -960,6 +970,7 @@
     "product_list_mde4XN",
     "product_list_gz9Ar4",
     "tylt_fl_produit_mea_UKCftN",
+    "tylt_ms_elements_ynKNtc",
     "section_6AtJhA"
   ]
 }
