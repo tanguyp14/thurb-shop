@@ -3,7 +3,7 @@
 .tylt_double_visio {
   display: flex;
   overflow: hidden;
-  height: 30vh;
+  height: 60vh;
   @include breakpoints(sm, max) {
     flex-direction: column;
     height: fit-content;
