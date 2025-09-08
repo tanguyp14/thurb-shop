@@ -1,0 +1,165 @@
+{% schema %}
+{
+  "name": "TYLT - PRODUIT MEA",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "titre",
+      "label": "Titre"
+    },
+    {
+      "type": "image_picker",
+      "id": "timbre",
+      "label": "Timbre"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit"
+    }
+  ],
+  "presets": [
+    {
+      "name": "TYLT - PRODUIT MEA"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="tylt_fl_produit_mea">
+  {% assign product = all_products[section.settings.product] %}
+  {% if product %}
+    <div class="tylt_fl_produit_mea__product-card">
+      <div class="tylt_fl_produit_mea__product-card__titre">
+        <img
+          src="{{ section.settings.icon | img_url: '200x' }}"
+          alt="Icon"
+          class="tylt_fl_produit_mea__product-card__titre__icon"
+        >
+        <h2 class="tylt_fl_produit_mea__product-card__titre__text">{{ section.settings.titre }}</h2>
+      </div>
+      <div class="tylt_fl_produit_mea__product-card__container">
+        <img
+          src="{{ section.settings.timbre | img_url: '400x' }}"
+          alt="Timbre"
+          class="tylt_fl_produit_mea__product-card__container__timbre"
+        >
+        <img
+          src="{{ product.featured_image | img_url: 'grande' }}"
+          alt="{{ product.title }}"
+          class="tylt_fl_produit_mea__product-card__container__image"
+        >
+        <div class="tylt_fl_produit_mea__product-card__container__right">
+          <h3 class="tylt_fl_produit_mea__product-card__container__right__titre">{{ product.title }}</h3>
+          <p class="tylt_fl_produit_mea__product-card__container__right__price">{{ product.price | money }}</p>
+
+          {% if product.available %}
+            <form class="tylt-ajax-cart-form" data-product-id="{{ product.id }}">
+              <input type="hidden" name="form_type" value="product">
+              <input type="hidden" name="utf8" value="✓">
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+              <input type="hidden" name="quantity" value="1">
+
+              <button type="submit" class="button tylt-add-to-cart-btn">
+                <span class="btn-text">Ajouter au panier</span>
+                <span class="btn-loading" style="display: none;">Ajout...</span>
+              </button>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <p class="tylt_fl_produit_mea__product-not-found">Produit non trouvé.</p>
+  {% endif %}
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.tylt-ajax-cart-form');
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Empêche la redirection
+
+        const button = this.querySelector('.tylt-add-to-cart-btn');
+        const btnText = button.querySelector('.btn-text');
+        const btnLoading = button.querySelector('.btn-loading');
+        const variantId = this.querySelector('input[name="id"]').value; // ✅ Récupérer l'ID variant
+
+        // État loading
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        button.disabled = true;
+
+        // Préparer les données
+        const formData = new FormData(this);
+
+        // Envoyer la requête AJAX
+        fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Succès - afficher confirmation
+            btnText.textContent = '✓ Ajouté !';
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+
+            // ✅ Mettre à jour le compteur du panier avec les bons paramètres
+            triggerThemeCartUpdate(data, variantId, this);
+
+            // Retour à l'état normal après 2 secondes
+            setTimeout(() => {
+              btnText.textContent = 'Ajouter au panier';
+              button.disabled = false;
+            }, 2000);
+          })
+          .catch((error) => {
+            console.error('Erreur:', error);
+            btnText.textContent = 'Erreur';
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+            button.disabled = false;
+          });
+      });
+    }
+  });
+
+  // ✅ Fonction corrigée avec tous les paramètres nécessaires
+  function triggerThemeCartUpdate(addedItem, variantId, formElement) {
+    fetch('/cart.js')
+      .then((response) => response.json())
+      .then((cart) => {
+        console.log('🛒 Cart mis à jour:', cart); // Pour débugger
+
+        // Utiliser la même structure que CartAddEvent
+        const event = new CustomEvent('cart:update', {
+          bubbles: true,
+          detail: {
+            resource: cart,
+            sourceId: 'tylt-quick-add-' + Date.now(),
+            data: {
+              didError: false,
+              source: 'quick-add',
+              productId: formElement.dataset.productId, // ✅ Utiliser le form passé en paramètre
+              itemCount: cart.item_count,
+              variantId: variantId,
+            },
+          },
+        });
+
+        document.dispatchEvent(event);
+        console.log('✅ Événement cart:update déclenché'); // Pour débugger
+      })
+      .catch((error) => {
+        console.error('❌ Erreur mise à jour cart:', error);
+      });
+  }
+</script>

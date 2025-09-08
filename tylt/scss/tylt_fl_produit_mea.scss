@@ -1,0 +1,93 @@
+@use "aa_variables.scss" as *;
+
+.tylt_fl_produit_mea {
+  padding: 30px 0;
+
+  &__product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__titre {
+      margin: 30px 0;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      &__text {
+        text-transform: uppercase;
+        color: #002c39;
+      }
+      &__icon {
+        animation: rotateZoom 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+        max-width: 50px;
+      }
+    }
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      max-width: 80vw;
+      position: relative;
+      gap: 20px;
+      @include breakpoints(sm, max) {
+        flex-direction: column;
+      }
+      &__timbre {
+        position: absolute;
+        z-index: 10;
+        width: 190px;
+        top: -100px;
+        left: -70px;
+        rotate: -11deg;
+        animation: rotateZoom 10s 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+        @include breakpoints(sm, max) {
+          width: 90px;
+           top: -10px;
+        left: -20px;
+        }
+      }
+      &__image {
+        max-width: 50%;
+        object-fit: cover;
+        @include breakpoints(sm, max) {
+          max-width: 100%;
+        }
+      }
+      &__right {
+        margin-top: 30px;
+        width: 40%;
+        @include breakpoints(sm, max) {
+          width: 100%;
+        }
+        &__titre {
+          font-size: 25px;
+          margin-bottom: 0;
+          color: #002c39;
+          font-weight: 900;
+        }
+        &__price {
+          font-size: 25px;
+          font-weight: 500;
+          margin: 0px 0px 30px 0px;
+          color: #002c39;
+        }
+        form.tylt-ajax-cart-form {
+          button.tylt-add-to-cart-btn {
+            padding: 10px 20px;
+            background-color: #004e65;
+            --button-border-color: #004e65;
+            color: white;
+            font-size: 15px;
+                    @include breakpoints(sm, max) {
+          width: 100%;
+        }
+            &:hover {
+              --button-border-color: #75a0ad;
+            }
+          }
+        }
+      }
+    }
+  }
+}
