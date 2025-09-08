@@ -33,6 +33,8 @@
       transition: all 0.3s ease;
       overflow: hidden;
       min-width: 200px;
+        text-align: center;
+
       @include breakpoints(sm, max) {
         left: 50vw;
         translate: -50%;
@@ -60,6 +62,7 @@
         mix-blend-mode: difference;
         font-weight: 800;
         letter-spacing: normal;
+        text-align: center;
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1) 0.1s; // Délai pour un effet plus smooth
       }
 
