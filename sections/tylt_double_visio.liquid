@@ -1,0 +1,80 @@
+{% schema %}
+{
+  "name": "TYLT - DOUBLE TROUBLE",
+  "blocks": [
+    {
+      "type": "infos_blocks",
+      "name": "Images",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "video",
+          "id": "video_bg",
+          "label": "Vidéo background"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_bg",
+          "label": "Image background"
+        },
+        {
+          "type": "text",
+          "id": "text_infos",
+          "label": "Texte Bouton"
+        },
+        {
+          "type": "url",
+          "id": "text_url",
+          "label": "Lien"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TYLT - DOUBLE TROUBLE"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="tylt_double_visio">
+  {% for block in section.blocks %}
+    <div class="tylt-info-block">
+      {% if block.settings.video_bg %}
+        <video 
+          loop 
+          autoplay 
+          muted 
+          playsinline
+          preload="auto"
+          poster="{{ block.settings.video_bg.preview_image.src }}"
+          style="width:100%;height:auto;"
+          class="tylt-info-video"
+        >
+          {% comment %}Différentes qualités pour une meilleure compatibilité{% endcomment %}
+          {% for source in block.settings.video_bg.sources %}
+            {% if source.format == 'mp4' %}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}" 
+                      media="(max-width: {{ source.width }}px)">
+            {% endif %}
+          {% endfor %}
+          
+          {% comment %}Fallback - prendre la première source MP4{% endcomment %}
+          {% assign first_mp4 = block.settings.video_bg.sources | where: 'format', 'mp4' | first %}
+          {% if first_mp4 %}
+            <source src="{{ first_mp4.url }}" type="{{ first_mp4.mime_type }}">
+          {% endif %}
+          
+          Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
+      {% elsif block.settings.image_bg %}
+        <img src="{{ block.settings.image_bg | img_url: 'original' }}" alt="Info Icon">
+      {% endif %}
+      {% if block.settings.text_infos %}
+        <a href="{{ block.settings.text_url }}" class="tylt-info-btn"><span>{{ block.settings.text_infos }}</span></a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</section>
+

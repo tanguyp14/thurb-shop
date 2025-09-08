@@ -1,0 +1,74 @@
+@use "aa_variables.scss" as *;
+
+.tylt_double_visio {
+  display: flex;
+  overflow: hidden;
+  height: 400px;
+  @include breakpoints(sm, max) {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .tylt-info-block {
+    width: 50%;
+    position: relative;
+    display: flex;
+    @include breakpoints(sm, max) {
+      width: 100%;
+    }
+    img,
+    video {
+      object-fit: cover;
+      object-position: center center;
+    }
+    a.tylt-info-btn {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      background-color: white;
+      border: 2px solid black;
+      padding: 10px 30px;
+      text-decoration: none;
+      box-shadow: 0px 2px 0px black;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      @include breakpoints(sm, max) {
+        left: 50vw;
+        translate: -50%;
+      }
+      // Effet de fond diagonal
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -180%;
+        width: 140%;
+        height: 100%;
+        background-color: black;
+        transform: skewX(40deg);
+        transform-origin: top left;
+        transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
+        z-index: 1;
+      }
+
+      span {
+        position: relative;
+        z-index: 2;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        mix-blend-mode: difference;
+        font-weight: 800;
+        letter-spacing: normal;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1) 0.1s; // Délai pour un effet plus smooth
+      }
+
+      &:hover {
+        &::before {
+          left: -40%;
+        }
+        span {
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}
