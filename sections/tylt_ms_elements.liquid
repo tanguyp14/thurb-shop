@@ -1,0 +1,53 @@
+{% schema %}
+{
+  "name": "TYLT - MSelement",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tylt_class",
+      "label": "Class de l'element",
+      "default": "tylt-none"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien ?"
+    },
+    {
+      "type": "text",
+      "id": "tylt_aos",
+      "label": "AOS",
+      "default": "fade-right"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Images surcouche"
+    }
+  ],
+  "presets": [
+    {
+      "name": "TYLT - Movable Solo element"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="tylt_movable_solo_element {{ section.settings.tylt_class }}">
+  <div class="tylt_movable_solo_element__container">
+    {% if section.settings.button_link -%}
+      <a
+        href="{{ section.settings.button_link }}"
+        alt="Lien vers : {{ section.settings.button_link }}"
+        aria-label="{{ section.settings.button_link }}"
+      >
+    {%- endif %}
+    <span
+      data-aos="{{ section.settings.tylt_aos }}"
+      class="tylt_movable_solo_element__container__item {{ section.settings.tylt_class }}"
+    >
+      <span class="item_image" style="background-image:url('{{ section.settings.icon | image_url }}')"> </span>
+    </span>
+    {%- if section.settings.button_link %}</a>{% endif %}
+  </div>
+</section>

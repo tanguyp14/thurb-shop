@@ -1,0 +1,138 @@
+{% schema %}
+{
+  "name": "TYLT - Triple Infos",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "large_cloud_image",
+      "label": "Nuage Top"
+    },
+    {
+      "type": "image_picker",
+      "id": "small_cloud_image",
+      "label": "Petit Nuages"
+    },
+        {
+      "type": "text",
+      "id": "titre_nl",
+      "label": "Titre NL"
+    },
+            {
+      "type": "text",
+      "id": "soustitre_nl",
+      "label": "Sous titre NL"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "infos_blocks",
+      "name": "Infos",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_info",
+          "label": "Icon Info"
+        },
+        {
+          "type": "text",
+          "id": "text_infos",
+          "label": "Texte Info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TYLT - Triple Infos"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="tylt_triple_infos">
+  <div class="tylt_triple_infos__clouds__large">
+    {% if section.settings.large_cloud_image %}
+      <div class="tylt_triple_infos__clouds__large">
+        <img src="{{ section.settings.large_cloud_image | img_url: 'master' }}" alt="Petit Nuage">
+      </div>
+    {% endif %}
+  </div>
+  <div class="tylt_triple_infos__blocks">
+    {% for block in section.blocks %}
+      <div class="tylt_triple_infos__blocks__block" {{ block.shopify_attributes }}>
+        {% if block.settings.icon_info %}
+          <img src="{{ block.settings.icon_info | img_url: 'master' }}" alt="Icon Info">
+        {% endif %}
+        <div class="tylt_triple_infos__blocks__block__text">
+          {{ block.settings.text_infos }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="tylt_triple_infos__newsletter">
+    <h3 class="tylt_triple_infos__newsletter__titre">{{ section.settings.titre_nl }}</h3>
+    <p class="tylt_triple_infos__newsletter__soustitre">{{ section.settings.soustitre_nl }}</p>
+
+    <div
+      class="email-signup-block size-style spacing-style"
+      style="--size-style-width: 100%;--size-style-height: ;--padding-block-start: 0px;--padding-block-end: 0px;--padding-inline-start: 0px;--padding-inline-end: 0px;"
+    >
+      <form
+        method="post"
+        action="/contact#contact_form"
+        id="contact_form"
+        accept-charset="UTF-8"
+        class="email-signup__form spacing-style"
+        data-dashlane-rid="ad7b15fc6b146037"
+        data-dashlane-classification="register"
+      >
+        <input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
+        <div class="email-signup__input-group " style="--border-width: 0px; --border-radius: 100px;">
+          <label for="EmailInput-AQUh1YXhxblhxVEcxT__email_signup_zxrhUw" class="visually-hidden"> E-mail </label>
+          <input
+            id="EmailInput-AQUh1YXhxblhxVEcxT__email_signup_zxrhUw"
+            class="email-signup__input email-signup__input--all paragraph "
+            type="email"
+            name="contact[email]"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            placeholder="Adresse e-mail"
+            required=""
+            data-dashlane-rid="563e4f37495d2b60"
+            data-dashlane-classification="email"
+            data-kwimpalastatus="alive"
+            data-kwimpalaid="1757329574643-0"
+          >
+          <button
+            class="email-signup__button  email-signup__button--text paragraph button-secondary button-secondary--AQUh1YXhxblhxVEcxT__email_signup_zxrhUw "
+            data-dashlane-label="true"
+            data-dashlane-rid="94b6bf80bd10bbfd"
+            data-dashlane-classification="other"
+          >
+            Je m'inscris
+          </button>
+          <span
+            id="1757329574643-0"
+            data-dashlanecreated="true"
+            style="color-scheme: initial; forced-color-adjust: initial; mask: initial; math-depth: initial; position: absolute; position-anchor: initial; text-size-adjust: initial; appearance: initial; color: initial; font: initial; font-palette: initial; font-synthesis: initial; position-area: initial; text-orientation: initial; text-rendering: initial; text-spacing-trim: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; anchor-name: initial; anchor-scope: initial; animation-composition: initial; animation: initial; app-region: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: url(&quot;chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/content/injected/logo-autofill-known.svg&quot;) center center / contain no-repeat; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: none; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; bottom: initial; box-decoration-break: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; corner-shape: initial; corner-block-end-shape: initial; corner-block-start-shape: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: pointer; cx: initial; cy: initial; d: initial; display: inline; dominant-baseline: initial; dynamic-range-limit: initial; empty-cells: initial; field-sizing: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: 16px; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; interpolate-size: initial; isolation: initial; left: 402px; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask-type: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: 16px; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: 1; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-block: initial; overflow-clip-margin: initial; overflow-inline: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; position-try: initial; position-visibility: initial; print-color-adjust: initial; quotes: initial; r: initial; reading-flow: initial; reading-order: initial; resize: initial; right: initial; rotate: initial; ruby-align: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-initial-target: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-marker-group: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-box: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; text-wrap: initial; timeline-scope: initial; top: 18px; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-class: initial; view-transition-name: initial; visibility: visible; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; white-space-collapse: initial; widows: initial; width: 16px; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: auto;"
+          ></span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="tylt_fl_top__clouds">
+    {% if section.settings.small_cloud_image %}
+      <div class="tylt_fl_top__clouds__small one">
+        <img src="{{ section.settings.small_cloud_image | img_url: 'master' }}" alt="Petit Nuage">
+      </div>
+      <div class="tylt_fl_top__clouds__small two">
+        <img src="{{ section.settings.small_cloud_image | img_url: 'master' }}" alt="Petit Nuage">
+      </div>
+      <div class="tylt_fl_top__clouds__small tree">
+        <img src="{{ section.settings.small_cloud_image | img_url: 'master' }}" alt="Petit Nuage">
+      </div>
+    {% endif %}
+  </div>
+</section>

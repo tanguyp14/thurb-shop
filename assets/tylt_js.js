@@ -107,4 +107,9 @@ document.addEventListener('DOMContentLoaded', function () {
             subtree: true
         });
     }
+
+    //Supprime les controls sur les vidéos
+    document.querySelectorAll('deferred-media > video').forEach(function(video) {
+        video.removeAttribute('controls');
+    });
 });
