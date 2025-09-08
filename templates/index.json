@@ -184,11 +184,25 @@
             "overlay_style": "solid",
             "gradient_direction": "to top",
             "padding-block-start": 100,
-            "padding-block-end": 0,
+            "padding-block-end": 20,
             "padding-inline-start": 0,
             "padding-inline-end": 20
           },
           "blocks": {
+            "spacer_yqpCXX": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
             "button_xb47YT": {
               "type": "button",
               "name": "t:names.button",
@@ -206,6 +220,7 @@
             }
           },
           "block_order": [
+            "spacer_yqpCXX",
             "button_xb47YT"
           ]
         },
@@ -226,7 +241,7 @@
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fill",
+            "height": "custom",
             "custom_height": 100,
             "inherit_color_scheme": false,
             "color_scheme": "scheme-5",
@@ -250,6 +265,20 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "spacer_nkrFT8": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
             "button_jpp9xt": {
               "type": "button",
               "name": "t:names.button",
@@ -267,6 +296,7 @@
             }
           },
           "block_order": [
+            "spacer_nkrFT8",
             "button_jpp9xt"
           ]
         }
