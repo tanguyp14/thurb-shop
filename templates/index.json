@@ -152,7 +152,7 @@
           "type": "infos_blocks",
           "settings": {
             "video_bg": "shopify://files/videos/0902(3).mov",
-            "text_infos": "Voir thurbshop",
+            "text_infos": "> thurbshop",
             "text_url": "shopify://collections/all"
           }
         },
@@ -160,7 +160,7 @@
           "type": "infos_blocks",
           "settings": {
             "image_bg": "shopify://shop_images/FLBANN.png",
-            "text_infos": "Voir firstlove market",
+            "text_infos": "> firstlove market",
             "text_url": "shopify://collections/firstlove-market"
           }
         }
