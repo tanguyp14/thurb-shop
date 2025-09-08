@@ -195,8 +195,8 @@
               "settings": {
                 "size": "pixel",
                 "percent_size": 100,
-                "pixel_size": 200,
-                "custom_mobile_size": false,
+                "pixel_size": 300,
+                "custom_mobile_size": true,
                 "size_mobile": "percent",
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
@@ -272,7 +272,7 @@
                 "size": "pixel",
                 "percent_size": 100,
                 "pixel_size": 300,
-                "custom_mobile_size": false,
+                "custom_mobile_size": true,
                 "size_mobile": "percent",
                 "percent_size_mobile": 100,
                 "pixel_size_mobile": 120
