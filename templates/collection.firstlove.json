@@ -892,6 +892,44 @@
         "product": "firstlove-montreal"
       }
     },
+    "tylt_triple_infos_FXnEA6": {
+      "type": "tylt_triple_infos",
+      "blocks": {
+        "infos_blocks_6a7QwG": {
+          "type": "infos_blocks",
+          "settings": {
+            "icon_info": "shopify://shop_images/NORMANDIE.svg",
+            "text_infos": "Imprimé en Normandie"
+          }
+        },
+        "infos_blocks_gtQTjP": {
+          "type": "infos_blocks",
+          "settings": {
+            "icon_info": "shopify://shop_images/CARTE.svg",
+            "text_infos": "Paiement simple et sécurisé"
+          }
+        },
+        "infos_blocks_ybBqWY": {
+          "type": "infos_blocks",
+          "settings": {
+            "icon_info": "shopify://shop_images/AVION.svg",
+            "text_infos": "Livraison en 24/48h"
+          }
+        }
+      },
+      "block_order": [
+        "infos_blocks_6a7QwG",
+        "infos_blocks_gtQTjP",
+        "infos_blocks_ybBqWY"
+      ],
+      "name": "TYLT - Triple Infos",
+      "settings": {
+        "large_cloud_image": "shopify://shop_images/coupep.svg",
+        "small_cloud_image": "shopify://shop_images/NUAGE_560bfb27-4f3b-4006-a08c-27e4c7bc8f40.svg",
+        "titre_nl": "Newsletters",
+        "soustitre_nl": "Suivez-nous et restez connectés pour découvrir nos dernières créations !"
+      }
+    },
     "tylt_ms_elements_ynKNtc": {
       "type": "tylt_ms_elements",
       "name": "TYLT - Movable Solo element",
@@ -970,6 +1008,7 @@
     "product_list_mde4XN",
     "product_list_gz9Ar4",
     "tylt_fl_produit_mea_UKCftN",
+    "tylt_triple_infos_FXnEA6",
     "tylt_ms_elements_ynKNtc",
     "section_6AtJhA"
   ]
