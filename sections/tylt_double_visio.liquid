@@ -42,10 +42,10 @@
   {% for block in section.blocks %}
     <div class="tylt-info-block">
       {% if block.settings.video_bg %}
-        <video 
-          loop 
-          autoplay 
-          muted 
+        <video
+          loop
+          autoplay
+          muted
           playsinline
           preload="auto"
           poster="{{ block.settings.video_bg.preview_image.src }}"
@@ -55,26 +55,33 @@
           {% comment %}Différentes qualités pour une meilleure compatibilité{% endcomment %}
           {% for source in block.settings.video_bg.sources %}
             {% if source.format == 'mp4' %}
-              <source src="{{ source.url }}" type="{{ source.mime_type }}" 
-                      media="(max-width: {{ source.width }}px)">
+              <source
+                src="{{ source.url }}"
+                type="{{ source.mime_type }}"
+                media="(max-width: {{ source.width }}px)"
+              >
             {% endif %}
           {% endfor %}
-          
+
           {% comment %}Fallback - prendre la première source MP4{% endcomment %}
           {% assign first_mp4 = block.settings.video_bg.sources | where: 'format', 'mp4' | first %}
           {% if first_mp4 %}
             <source src="{{ first_mp4.url }}" type="{{ first_mp4.mime_type }}">
           {% endif %}
-          
+
           Votre navigateur ne supporte pas les vidéos HTML5.
         </video>
       {% elsif block.settings.image_bg %}
         <img src="{{ block.settings.image_bg | img_url: 'original' }}" alt="Info Icon">
       {% endif %}
       {% if block.settings.text_infos %}
-        <a href="{{ block.settings.text_url }}" class="tylt-info-btn"><span>{{ block.settings.text_infos }}</span></a>
+        <a href="{{ block.settings.text_url }}" class="tylt-info-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0.00 0.00 123.00 170.00">
+            <path fill="#000000ff" d="   M 109.00 79.97   Q 109.00 80.08 108.93 80.15   Q 79.76 109.32 42.55 146.55   Q 40.42 148.68 35.05 153.75   A 0.42 0.42 0.0 0 1 34.46 153.74   L 20.95 140.22   A 0.33 0.33 0.0 0 1 20.95 139.75   Q 22.59 138.11 80.43 80.24   Q 80.52 80.15 80.52 79.98   Q 80.52 79.80 80.43 79.71   Q 22.56 21.87 20.92 20.23   A 0.33 0.33 0.0 0 1 20.92 19.76   L 34.43 6.23   A 0.42 0.42 0.0 0 1 35.02 6.22   Q 40.39 11.29 42.52 13.42   Q 79.75 50.63 108.93 79.79   Q 109.00 79.86 109.00 79.97   Z"/>
+          </svg>
+          <span>{{ block.settings.text_infos }}</span></a
+        >
       {% endif %}
     </div>
   {% endfor %}
 </section>
-

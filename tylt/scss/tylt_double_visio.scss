@@ -36,7 +36,13 @@
       min-width: 200px;
       text-align: center;
       font-family: 'Dela gothic one', script;
-      // Effet de fond diagonal
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+      svg{
+        height: 15px;
+      }
       &::before {
         content: "";
         position: absolute;
