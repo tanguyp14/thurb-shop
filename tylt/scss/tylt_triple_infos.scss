@@ -1,7 +1,12 @@
 @use "aa_variables.scss" as *;
 
-.body:has(.tylt_triple_infos){
-  
+
+body:has(.tylt_triple_infos){
+  div.shopify-section-group-footer-group{
+    > div.section{
+      display: none;
+     }
+  }
 }
 
 .tylt_triple_infos {
