@@ -882,6 +882,16 @@
         "padding-block-end": 48
       }
     },
+    "tylt_fl_produit_mea_UKCftN": {
+      "type": "tylt_fl_produit_mea",
+      "name": "TYLT - PRODUIT MEA",
+      "settings": {
+        "icon": "shopify://shop_images/SHINE.svg",
+        "titre": "Nouveauté",
+        "timbre": "shopify://shop_images/TIMBRE.svg",
+        "product": "firstlove-montreal"
+      }
+    },
     "section_6AtJhA": {
       "type": "section",
       "blocks": {
@@ -891,6 +901,7 @@
           "settings": {
             "source": "uploaded",
             "video": "shopify://files/videos/VIDEO FIRSTLOVE.mp4",
+            "video_url": "",
             "video_autoplay": true,
             "video_loop": true,
             "alt": "",
@@ -948,6 +959,7 @@
     "product_list_adyhax",
     "product_list_mde4XN",
     "product_list_gz9Ar4",
+    "tylt_fl_produit_mea_UKCftN",
     "section_6AtJhA"
   ]
 }
