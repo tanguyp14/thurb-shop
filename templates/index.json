@@ -160,8 +160,8 @@
           "type": "infos_blocks",
           "settings": {
             "image_bg": "shopify://shop_images/FLBANN.png",
-            "text_infos": "Voir thurbshop",
-            "text_url": ""
+            "text_infos": "Voir firstlove market",
+            "text_url": "shopify://collections/firstlove-market"
           }
         }
       },
