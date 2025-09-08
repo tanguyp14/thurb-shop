@@ -40,8 +40,16 @@
       flex-direction: row;
       gap: 5px;
       align-items: center;
+      text-wrap: nowrap;
+      width: fit-content;
+      border-radius: 30px;
       svg{
+        width: 15px;
         height: 15px;
+        fill: white;
+        z-index: 2;
+        mix-blend-mode: difference;
+        flex-shrink: 0;
       }
       &::before {
         content: "";
