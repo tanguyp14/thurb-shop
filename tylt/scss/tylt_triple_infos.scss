@@ -1,5 +1,9 @@
 @use "aa_variables.scss" as *;
 
+.body:has(.tylt_triple_infos){
+  
+}
+
 .tylt_triple_infos {
   background-color: #adf3ff;
   position: relative;
