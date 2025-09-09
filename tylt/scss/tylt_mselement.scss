@@ -39,11 +39,19 @@
         z-index: -1;
         animation: rotateZoom 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
         animation-delay: 2s;
-        &_tiny {
-          width: 10vw;
-          max-width: 440px;
-          top: -7vw;
-          right: 5vw;
+      }
+       &.tylt_thurb_fl_timbre_tiny {
+        width: 10vw;
+        max-width: 440px;
+        top: -7vw;
+        right: 3vw;
+        aspect-ratio: 127/150;
+        rotate: 17deg;
+        z-index: -1;
+        animation: rotateZoom 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+        animation-delay: 2s;
+        @include breakpoints(sm, max){
+          width: 20vw;
         }
       }
     }
