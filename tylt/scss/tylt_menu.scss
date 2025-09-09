@@ -1,5 +1,87 @@
-.chevron_menu{
+.chevron_menu {
   fill: black;
   height: 13px;
   margin-left: 2px;
+}
+
+.menu-list__submenu {
+  &.tylt_mega_menu {
+    font-family: var(--menu-top-level-font-family);
+    width: fit-content;
+    translate: -50%;
+    background-color: white;
+    left: 50%;
+    border-radius: 30px;
+    top: calc(100% + 10px + var(--border-bottom-width));
+    box-shadow: 0px 0px 10px 10px rgba(grey, 0.1);
+    clip-path: unset;
+    .tylt_mega_menu_child {
+      &_grid {
+        display: grid;
+        grid-template-columns: 220px 220px 40px 220px;
+        gap: 20px;
+        &_parentname {
+          font-size: 25px;
+          color: black;
+          align-items: center;
+          justify-content: flex-start;
+        }
+        ul {
+          @for $i from 1 through 10 {
+            > li:nth-child(#{$i}) {
+              > a > .mega-menu__link-title > i {
+                animation-delay: #{($i - 1) * 0.5}s;
+              }
+            }
+          }
+          a > .mega-menu__link-title {
+            color: rgb(28, 28, 28);
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            i {
+              width: 25px;
+              height: 25px;
+              display: none;
+              animation: rotateZoom 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+              position: relative;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: cover;
+              &.LOS {
+                display: flex;
+                background-image: url('../assets/los.png');
+              }
+              &.NEWS {
+                display: flex;
+                background-image: url('../assets/news.png');
+              }
+              &.HOME {
+                display: flex;
+                background-image: url('../assets/home.png');
+              }
+              &.MASTERPIECES {
+                display: flex;
+                background-image: url('../assets/master.png');
+              }
+              &.AIWIPT {
+                display: flex;
+                background-image: url('../assets/ai.png');
+              }
+              &.FIRSTLOVE {
+                display: flex;
+                background-image: url('../assets/first.png');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.overflow-menu::after {
+  background-color: transparent !important;
+  box-shadow: none;
 }

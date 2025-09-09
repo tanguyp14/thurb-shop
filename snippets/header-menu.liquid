@@ -22,7 +22,7 @@
     assign ratio = block_settings.featured_products_aspect_ratio
   elsif block_settings.menu_style == 'tylt_menu'
     # Vous pouvez ajouter des paramètres spécifiques pour votre type 'tylt' ici
-    assign ratio = block_settings.featured_collections_aspect_ratio
+    assign ratio = '40/45'
   endif
 %}
 
@@ -50,7 +50,7 @@
         <span class="menu-list__link-title">{{- link.title -}}</span>{%- if link.links != blank -%}{% render 'chevron_menu' %}{% endif -%}
       </a>
       {%- if link.links != blank -%}
-        <div class="menu-list__submenu{{ color_scheme_classes }}" ref="submenu[]">
+        <div class="menu-list__submenu{{ color_scheme_classes }} {% if menu_content_type == "tylt_menu" %} tylt_mega_menu {% endif %}" ref="submenu[]">
           <div
             id="submenu-{{ forloop.index }}"
             class="menu-list__submenu-inner"
