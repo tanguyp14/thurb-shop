@@ -20,6 +20,9 @@
     assign ratio = block_settings.featured_collections_aspect_ratio
   elsif block_settings.menu_style == 'featured_products'
     assign ratio = block_settings.featured_products_aspect_ratio
+  elsif block_settings.menu_style == 'tylt_menu'
+    # Vous pouvez ajouter des paramètres spécifiques pour votre type 'tylt' ici
+    assign ratio = block_settings.featured_collections_aspect_ratio
   endif
 %}
 

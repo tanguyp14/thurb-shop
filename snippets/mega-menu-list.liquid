@@ -61,6 +61,18 @@
       assign menu_content_type = 'text'
     endif
   endif
+
+  if menu_content_type == 'tylt_menu'
+    if parent_link.type == 'collection_link'
+      assign collection_handles = parent_link.object.handle | append: ','
+    elsif parent_link.type == 'catalog_link' or parent_link.type == 'collections_link'
+      assign collection_handles = 'all' | append: ','
+    endif
+    assign collection_links = parent_link.links | where: 'type', 'collection_link'
+    for collection_link in collection_links
+      assign collection_handles = collection_handles | append: collection_link.object.handle | append: ','
+    endfor
+  endif
 %}
 <ul
   data-menu-list-id="{{ id }}"
@@ -118,6 +130,7 @@
 
           {% render 'link-featured-image', link: link, class: 'mega-menu__link-image', sizes: collection_image_sizes %}
         {% endif %}
+
         <span
           class="mega-menu__link-title"
         >
@@ -233,6 +246,26 @@
     assign max_featured_collections_tablet = 1
     assign max_menu_columns_tablet = max_menu_columns_tablet | minus: max_collection_columns_tablet
   endif
+
+    if menu_content_type == 'tylt_menu'
+    # desktop breakpoint
+    assign min_featured_collection_columns = min_collections | times: 1
+    assign temp_column_count = column_count | plus: min_featured_collection_columns
+
+    if temp_column_count > max_menu_columns
+      assign max_collection_columns = 1
+    else
+      assign max_collection_columns = max_menu_columns | minus: column_count
+    endif
+
+    assign max_featured_collections = max_collection_columns | divided_by: 2 | floor
+    assign max_menu_columns = max_menu_columns | minus: max_collection_columns
+
+    # tablet breakpoint
+    assign max_collection_columns_tablet = 1
+    assign max_featured_collections_tablet = 1
+    assign max_menu_columns_tablet = max_menu_columns_tablet | minus: max_collection_columns_tablet
+  endif
 %}
 
 {% style %}
@@ -331,4 +364,31 @@
         {% endfor %}
       </ul>
     </span>
-{% endcase %}
+{% when 'tylt_menu' %}
+    {%- assign collection_handle = 'firstlove-market' -%}
+    {%- assign collection_object = collections[collection_handle] -%}
+
+    {%- capture image_sizes -%}
+      {%- render 'util-mega-menu-img-sizes-attr',
+        menu_content_type: 'featured_collections',
+        settings: settings
+      -%}
+    {%- endcapture -%}
+
+    <span
+      class="mega-menu__content"
+      style="--menu-content-columns-desktop: 1; --menu-content-columns-tablet: 1; --resource-card-corner-radius: {{ image_border_radius }}px;"
+    >
+      <ul class="mega-menu__content-list mega-menu__content-list--collections list-unstyled">
+        <li class="mega-menu__content-list-item">
+          {% render 'resource-card',
+            resource: collection_object,
+            resource_type: 'collection',
+            style: 'overlay',
+            image_aspect_ratio: content_aspect_ratio,
+            image_sizes: image_sizes
+          %}
+        </li>
+      </ul>
+    </span>
+  {% endcase %}
