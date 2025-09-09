@@ -341,7 +341,7 @@
                                     %}
                                   {% endif %}
                                   <span class="menu-drawer__menu-item-text">
-                                    {{- childlink.title | escape -}}
+                                     {{- childlink.title | escape -}}
                                   </span>
                                 </a>
                               {%- else -%}
@@ -438,7 +438,7 @@
                                     endif
                                   %}
                                   <ul
-                                    class="menu-drawer__menu menu-drawer__menu--grandchildlist details-content{% if render_link_image %} menu-drawer__menu--grid{% endif %}"
+                                    class="menu-drawer__menu menu-drawer__menu--grandchildlist details-content{% if render_link_image %} menu-drawer__menu--grid{% endif %} tylt_mobile_menu"
                                     role="list"
                                     tabindex="-1"
                                   >
@@ -462,8 +462,8 @@
                                               sizes: 'auto, 400px'
                                             %}
                                           {% endif %}
-                                          <span class="menu-drawer__menu-item-text">
-                                            {{- grandchildlink.title | escape -}}
+                                          <span class="menu-drawer__menu-item-text tylt_mobile_sous_menu">
+                                             <i class="{{- grandchildlink.title -}}"></i>{{- grandchildlink.title | escape -}}
                                           </span>
                                         </a>
                                       </li>

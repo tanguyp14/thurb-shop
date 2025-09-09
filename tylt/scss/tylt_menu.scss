@@ -42,7 +42,7 @@
             justify-content: center;
             gap: 5px;
             transition: letter-spacing 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            &:hover{
+            &:hover {
               letter-spacing: 1px;
             }
             i {
@@ -56,27 +56,27 @@
               background-size: cover;
               &.LOS {
                 display: flex;
-                background-image: url('../assets/los.png');
+                background-image: url("../assets/los.png");
               }
               &.NEWS {
                 display: flex;
-                background-image: url('../assets/news.png');
+                background-image: url("../assets/news.png");
               }
               &.HOME {
                 display: flex;
-                background-image: url('../assets/home.png');
+                background-image: url("../assets/home.png");
               }
               &.MASTERPIECES {
                 display: flex;
-                background-image: url('../assets/master.png');
+                background-image: url("../assets/master.png");
               }
               &.AIWIPT {
                 display: flex;
-                background-image: url('../assets/ai.png');
+                background-image: url("../assets/ai.png");
               }
               &.FIRSTLOVE {
                 display: flex;
-                background-image: url('../assets/first.png');
+                background-image: url("../assets/first.png");
               }
             }
           }
@@ -89,4 +89,60 @@
   background-color: transparent !important;
   box-shadow: none;
   display: none;
+}
+
+ul.tylt_mobile_menu {
+  @for $i from 1 through 10 {
+    > li:nth-child(#{$i}) {
+      > a > .tylt_mobile_sous_menu > i {
+        animation-delay: #{($i - 1) * 0.5}s;
+      }
+    }
+  }
+  a > .tylt_mobile_sous_menu {
+    color: rgb(28, 28, 28);
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: letter-spacing 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    &:hover {
+      letter-spacing: 1px;
+    }
+    i {
+      width: 25px;
+      height: 25px;
+      display: none;
+      animation: rotateZoom 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      &.LOS {
+        display: flex;
+        background-image: url("../assets/los.png");
+      }
+      &.NEWS {
+        display: flex;
+        background-image: url("../assets/news.png");
+      }
+      &.HOME {
+        display: flex;
+        background-image: url("../assets/home.png");
+      }
+      &.MASTERPIECES {
+        display: flex;
+        background-image: url("../assets/master.png");
+      }
+      &.AIWIPT {
+        display: flex;
+        background-image: url("../assets/ai.png");
+      }
+      &.FIRSTLOVE {
+        display: flex;
+        background-image: url("../assets/first.png");
+      }
+    }
+  }
 }
