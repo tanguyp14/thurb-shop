@@ -1299,7 +1299,7 @@
       "type": "tylt_ms_elements",
       "name": "TYLT - Movable Solo element",
       "settings": {
-        "tylt_class": "tylt_thurb_timbre",
+        "tylt_class": "tylt_thurb_fl_timbre_tiny",
         "button_link": "",
         "tylt_aos": "fade-right",
         "icon": "shopify://shop_images/TIMBRE.svg"
