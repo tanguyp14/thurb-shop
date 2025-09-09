@@ -41,6 +41,10 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
+            transition: letter-spacing 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            &:hover{
+              letter-spacing: 1px;
+            }
             i {
               width: 25px;
               height: 25px;
