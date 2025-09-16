@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// menu-drawer.js
+
 document.addEventListener('DOMContentLoaded', function() {
   // Sélection de TOUS les boutons de fermeture
   const closeButtons = document.querySelectorAll('.menu-drawer__close-button');
