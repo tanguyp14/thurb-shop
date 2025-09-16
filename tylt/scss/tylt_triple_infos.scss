@@ -1,11 +1,30 @@
 @use "aa_variables.scss" as *;
 
-
-body:has(.tylt_triple_infos){
-  div.shopify-section-group-footer-group{
-    > div.section{
+.icon-block {
+  animation: rotateZoom 10s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+}
+.section .spacing-style {
+  > .group-block:nth-child(1) {
+    .icon-block {
+      animation-delay: 0s;
+    }
+  }
+  > .group-block:nth-child(2) {
+    .icon-block {
+      animation-delay: 1s;
+    }
+  }
+  > .group-block:nth-child(3) {
+    .icon-block {
+      animation-delay: 2s;
+    }
+  }
+}
+body:has(.tylt_triple_infos) {
+  div.shopify-section-group-footer-group {
+    > div.section {
       display: none;
-     }
+    }
   }
 }
 
@@ -81,21 +100,21 @@ body:has(.tylt_triple_infos){
     align-items: center;
     margin: auto;
     padding: 5vw 0 10vw;
-    &__titre{
+    &__titre {
       text-transform: uppercase;
       color: #002c39;
       font-size: 40px;
       margin-bottom: 0;
     }
-     &__soustitre{
+    &__soustitre {
       color: #002c39;
       font-size: 25px;
     }
 
     .email-signup-block {
       max-width: 800px;
-      form{
-        input{
+      form {
+        input {
           padding: 10px 20px;
           height: fit-content;
         }
