@@ -113,3 +113,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// menu-drawer.js
+document.addEventListener('DOMContentLoaded', function() {
+  // Sélection de TOUS les boutons de fermeture
+  const closeButtons = document.querySelectorAll('.menu-drawer__close-button');
+  const detailsContainer = document.getElementById('Details-menu-drawer-container');
+
+  if (closeButtons.length > 0 && detailsContainer) {
+    // Ajout de l'événement à chaque bouton
+    closeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        detailsContainer.removeAttribute('open');
+      });
+    });
+  }
+});
