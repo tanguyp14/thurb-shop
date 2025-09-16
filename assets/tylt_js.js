@@ -146,8 +146,8 @@ function updateMenuDrawerState(isOpen) {
   const closeIcon = summary.querySelector('.header-drawer-icon--close');
 
   if (openIcon && closeIcon) {
-    openIcon.style.display = isOpen ? 'none' : 'block';
-    closeIcon.style.display = isOpen ? 'block' : 'none';
+    openIcon.style.display = isOpen ? 'none' : 'flex';
+    closeIcon.style.display = isOpen ? 'flex' : 'none';
   }
 
   // Gérer le scroll
