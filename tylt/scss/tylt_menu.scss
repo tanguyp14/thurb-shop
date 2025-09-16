@@ -85,7 +85,7 @@
     }
   }
 }
-.overflow-menu::after {
+.overflow-menu::after, .menu-drawer__backdrop {
   background-color: transparent !important;
   box-shadow: none;
   display: none;
