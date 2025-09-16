@@ -89,31 +89,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Exécuter immédiatement
     animateLink();
     
+    // Observer les changements dans le DOM
     const observer = new MutationObserver(function(mutations) {
-    let shouldAnimate = false;
-
-    mutations.forEach(function(mutation) {
-        // Ignorer les changements dans le menu mobile
-        if (mutation.target.closest('#Details-menu-drawer-container')) {
-            return;
-        }
-        shouldAnimate = true;
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' || mutation.type === 'subtree') {
+                animateLink();
+            }
+        });
     });
-
-    if (shouldAnimate) {
-        animateLink();
+    
+    // Observer le menu
+    const menuContainer = document.querySelector('nav[header-menu]');
+    if (menuContainer) {
+        observer.observe(menuContainer, {
+            childList: true,
+            subtree: true
+        });
     }
-});
-
-// Observer uniquement le contenu statique du header (pas le menu mobile)
-const headerMenu = document.querySelector('nav[header-menu] > ul');
-if (headerMenu) {
-    observer.observe(headerMenu, {
-        childList: true,
-        subtree: true
-    });
-}
-
 
     //Supprime les controls sur les vidéos
     document.querySelectorAll('deferred-media > video').forEach(function(video) {
