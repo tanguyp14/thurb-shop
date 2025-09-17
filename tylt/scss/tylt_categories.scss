@@ -30,11 +30,11 @@
   &::after {
     content: "";
     position: absolute;
-    width: 35%;
+    width: 45%;
     aspect-ratio: 2101/1359;
     rotate: 353deg;
-    top: 2%;
-    right: 2%;
+    top: 0;
+    right: 0;
     background-image: url("../../../assets/new.png");
     background-size: cover;
     animation: rotateZoom 10s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
