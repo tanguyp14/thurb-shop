@@ -206,7 +206,7 @@
             "icon": "price_tag",
             "image_upload": "shopify://shop_images/Plan_de_travail_12_copie_8_2x_d8134b90-8653-4d6e-b62a-1dc8f0b37f09.png",
             "width": 130,
-            "link": "",
+            "link": "shopify://collections/collabs",
             "open_in_new_tab": false
           },
           "blocks": {}
@@ -242,19 +242,7 @@
             "icon": "price_tag",
             "image_upload": "shopify://shop_images/SITETITRE-13.png",
             "width": 140,
-            "link": "",
-            "open_in_new_tab": false
-          },
-          "blocks": {}
-        },
-        "icon_j996wL": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/Plan_de_travail_12_copie_15_2x_b6b71ced-ea2b-4644-9a3f-09c257d4ca7b.png",
-            "width": 162,
-            "link": "",
+            "link": "shopify://collections/news",
             "open_in_new_tab": false
           },
           "blocks": {}
@@ -279,7 +267,6 @@
         "icon_VHKLH4",
         "icon_qTaNrd",
         "icon_874JVn",
-        "icon_j996wL",
         "icon_FzhJyB"
       ],
       "name": "t:names.marquee_section",
