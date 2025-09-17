@@ -2166,11 +2166,11 @@
       "name": "t:names.collections_bento",
       "settings": {
         "collection_list": [
-          "print",
           "originaux",
           "firstlove-market",
           "masterpieces",
-          "accessoires"
+          "accessoires",
+          "home"
         ],
         "layout_type": "bento",
         "carousel_on_mobile": true,
