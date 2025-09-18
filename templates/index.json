@@ -194,7 +194,7 @@
             "icon": "price_tag",
             "image_upload": "shopify://shop_images/HANDMADE.png",
             "width": 144,
-            "link": "",
+            "link": "shopify://collections/originaux",
             "open_in_new_tab": false
           },
           "blocks": {}
