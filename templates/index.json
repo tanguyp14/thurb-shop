@@ -1725,7 +1725,7 @@
                 "text_ptb8UB": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Conçu et réalisé par THURB</p>",
+                    "text": "<p>Conçus et réalisés par THURB</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1851,7 +1851,7 @@
                 "text_AfK3rQ": {
                   "type": "text",
                   "settings": {
-                    "text": "<h2>Imprimés en France </h2>",
+                    "text": "<h2>Imprimés en Normandie</h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -2169,8 +2169,7 @@
           "originaux",
           "firstlove-market",
           "masterpieces",
-          "accessoires",
-          "home"
+          "accessoires"
         ],
         "layout_type": "bento",
         "carousel_on_mobile": true,
