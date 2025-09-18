@@ -57,7 +57,7 @@
           "primary_hover": "{{ shop.brand.colors.primary[1].background }}",
           "border": "#e6e6e6",
           "shadow": "#000000",
-          "primary_button_background": "#d8e3ee",
+          "primary_button_background": "#d2e8ff",
           "primary_button_text": "#000000",
           "primary_button_border": "#000000",
           "primary_button_hover_background": "#000000",
