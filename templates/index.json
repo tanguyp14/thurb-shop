@@ -1333,10 +1333,39 @@
                 "animation_repeat": true
               },
               "blocks": {}
+            },
+            "divider_yQVRja": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 0.5,
+                "corner_radius": "square",
+                "width_percent": 5,
+                "padding-block-start": 33,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "button_wnWRGD": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "VOIR LA COLLECTION",
+                "link": "shopify://collections/firstlove-market",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "jumbo_text_biiTQc"
+            "jumbo_text_biiTQc",
+            "divider_yQVRja",
+            "button_wnWRGD"
           ]
         }
       },
@@ -2196,12 +2225,12 @@
     "marquee_kjnjWD",
     "product_list_8FTidh",
     "product_list_NhJeJD",
-    "product_list_TVyGyx",
+    "product_list_LNyDPQ",
     "divider_xRLT3A",
     "section_8Wdqir",
     "tylt_ms_elements_V94DqT",
     "media_with_content_hR6rit",
-    "product_list_LNyDPQ",
+    "product_list_TVyGyx",
     "section_PiTNHG",
     "collection_list_xpBxCm"
   ]
