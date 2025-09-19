@@ -78,7 +78,7 @@
                 "border_radius": 100,
                 "input_type_preset": "paragraph",
                 "style_class": "button-secondary",
-                "display_type": "text",
+                "display_type": "arrow",
                 "label": "S'abonner",
                 "integrated_button": false,
                 "button_type_preset": "paragraph",
