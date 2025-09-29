@@ -294,6 +294,16 @@
         "padding-block-end": 32
       }
     },
+    "tylt_fl_produit_mea_UKCftN": {
+      "type": "tylt_fl_produit_mea",
+      "name": "TYLT - PRODUIT MEA",
+      "settings": {
+        "icon": "shopify://shop_images/SHINE.svg",
+        "titre": "Nouveauté",
+        "timbre": "shopify://shop_images/TIMBRE.svg",
+        "product": "normandy-lovers"
+      }
+    },
     "product_list_adyhax": {
       "type": "product-list",
       "blocks": {
@@ -882,16 +892,6 @@
         "padding-block-end": 48
       }
     },
-    "tylt_fl_produit_mea_UKCftN": {
-      "type": "tylt_fl_produit_mea",
-      "name": "TYLT - PRODUIT MEA",
-      "settings": {
-        "icon": "shopify://shop_images/SHINE.svg",
-        "titre": "Nouveauté",
-        "timbre": "shopify://shop_images/TIMBRE.svg",
-        "product": "normandy-lovers"
-      }
-    },
     "product_list_4e6DMb": {
       "type": "product-list",
       "blocks": {
@@ -1200,10 +1200,10 @@
   "order": [
     "tylt_fl_top_ddDmaG",
     "main",
+    "tylt_fl_produit_mea_UKCftN",
     "product_list_adyhax",
     "product_list_mde4XN",
     "product_list_gz9Ar4",
-    "tylt_fl_produit_mea_UKCftN",
     "product_list_4e6DMb",
     "tylt_triple_infos_FXnEA6",
     "tylt_ms_elements_ynKNtc",
