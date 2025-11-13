@@ -17,7 +17,7 @@
         "announcement_mxxhta": {
           "type": "_announcement",
           "settings": {
-            "text": "<strong>BLACK FRIDAY</strong> - UN PRINT A3 ACHETÉ = UN PRINT A3 OFFERT 🎁",
+            "text": "",
             "link": "shopify://collections/30x40",
             "font": "var(--font-primary--family)",
             "font_size": "var(--font-size--body-md)",
