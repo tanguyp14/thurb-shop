@@ -525,6 +525,45 @@
           "selected_variant_hover_text_color": "#ffffff",
           "selected_variant_hover_border_color": "#d8e3ee"
         }
+      },
+      "scheme-38ce99e8-eeb7-49d1-b8c8-f619f950b45d": {
+        "settings": {
+          "background": "#283e1f",
+          "foreground_heading": "#ffffff",
+          "foreground": "#ffffff",
+          "primary": "#ffffff",
+          "primary_hover": "{{ shop.brand.colors.primary[1].background }}",
+          "border": "#e6e6e6",
+          "shadow": "#000000",
+          "primary_button_background": "#294011",
+          "primary_button_text": "#000000",
+          "primary_button_border": "#000000",
+          "primary_button_hover_background": "#000000",
+          "primary_button_hover_text": "#ffffff",
+          "primary_button_hover_border": "#000000",
+          "secondary_button_background": "#efefef",
+          "secondary_button_text": "#000000",
+          "secondary_button_border": "#000000",
+          "secondary_button_hover_background": "#dedede",
+          "secondary_button_hover_text": "#000000",
+          "secondary_button_hover_border": "#000000",
+          "input_background": "#000000",
+          "input_text_color": "#000000",
+          "input_border_color": "#00000014",
+          "input_hover_background": "#202020",
+          "variant_background_color": "#202020",
+          "variant_text_color": "#000000",
+          "variant_border_color": "#e6e6e6",
+          "variant_hover_background_color": "#f5f5f5",
+          "variant_hover_text_color": "#000000",
+          "variant_hover_border_color": "#e6e6e6",
+          "selected_variant_background_color": "#c3cca6",
+          "selected_variant_text_color": "#ffffff",
+          "selected_variant_border_color": "#000000",
+          "selected_variant_hover_background_color": "#1a1a1a",
+          "selected_variant_hover_text_color": "#ffffff",
+          "selected_variant_hover_border_color": "#1a1a1a"
+        }
       }
     }
   },
