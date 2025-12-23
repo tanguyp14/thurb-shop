@@ -1,0 +1,217 @@
+{% comment %}
+  Bloc Shopify - Pop-up avec dates (début/fin) et contenu texte riche
+  Affichage en bas de page avec fermeture possible
+{% endcomment %}
+
+<div class="popup-banner-container" id="popupBanner">
+  <div class="popup-banner">
+    <button class="popup-close" id="popupClose" aria-label="Fermer la pop-up">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M2 2L18 18M18 2L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="popup-content">
+      {% if section.settings.rich_text != blank %}
+        <div class="popup-text">
+          {{ section.settings.rich_text }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .popup-banner-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: none;
+    padding: 20px;
+  }
+
+  .popup-banner-container.is-visible {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    animation: slideUp 0.4s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .popup-banner {
+    position: relative;
+    background: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+    padding: 30px 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.text_color }};
+    transition: opacity 0.2s ease;
+  }
+
+  .popup-close:hover {
+    opacity: 0.7;
+  }
+
+  .popup-content {
+    padding-right: 30px;
+  }
+
+  .popup-text {
+    font-size: {{ section.settings.font_size }}px;
+    line-height: 1.6;
+  }
+
+  .popup-text h1,
+  .popup-text h2,
+  .popup-text h3 {
+    margin: 0 0 15px 0;
+  }
+
+  .popup-text p {
+    margin: 0 0 10px 0;
+  }
+
+  .popup-text a {
+    color: {{ section.settings.text_color }};
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .popup-banner-container {
+      padding: 0px 20px 60px 20px;
+    }
+
+    .popup-banner {
+      padding: 20px 25px;
+    }
+
+    .popup-text {
+      font-size: {{ section.settings.font_size | minus: 2 }}px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const popupBanner = document.getElementById('popupBanner');
+    const popupClose = document.getElementById('popupClose');
+
+    // Récupère les dates du bloc
+    const dateDebut = '{{ section.settings.date_debut }}';
+    const dateFin = '{{ section.settings.date_fin }}';
+
+    // Fonction pour vérifier si on est dans la plage de dates
+    function isWithinDateRange(start, end) {
+      const now = new Date();
+      const startDate = new Date(start);
+      const endDate = new Date(end);
+
+      return now >= startDate && now <= endDate;
+    }
+
+    // Fonction pour vérifier si l'utilisateur a fermé la pop-up
+    function hasClosedPopup() {
+      const closed = localStorage.getItem('popupBannerClosed');
+      if (!closed) return false;
+
+      const closedDate = new Date(closed);
+      const now = new Date();
+      const oneHourInMs = 60 * 60 * 1000;
+
+      return now - closedDate < oneHourInMs;
+    }
+
+    // Affiche ou masque la pop-up
+    function updatePopupVisibility() {
+      if (dateDebut && dateFin && isWithinDateRange(dateDebut, dateFin)) {
+        if (!hasClosedPopup()) {
+          popupBanner.classList.add('is-visible');
+        }
+      } else {
+        popupBanner.classList.remove('is-visible');
+      }
+    }
+
+    // Gestion de la fermeture
+    popupClose.addEventListener('click', function() {
+      popupBanner.classList.remove('is-visible');
+      localStorage.setItem('popupBannerClosed', new Date().toISOString());
+    });
+
+    // Initialisation
+    updatePopupVisibility();
+
+    // Vérifie chaque minute si les dates sont toujours valides
+    setInterval(updatePopupVisibility, 60000);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Pop-up avec dates",
+  "settings": [
+    {
+      "type": "text",
+      "id": "date_debut",
+      "label": "Date de début (YYYY-MM-DD)",
+      "placeholder": "2024-01-15"
+    },
+    {
+      "type": "text",
+      "id": "date_fin",
+      "label": "Date de fin (YYYY-MM-DD)",
+      "placeholder": "2024-01-31"
+    },
+    {
+      "type": "liquid",
+      "id": "rich_text",
+      "label": "Contenu texte riche"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Couleur de fond",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#000000"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Pop-up avec dates"
+    }
+  ]
+}
+{% endschema %}
