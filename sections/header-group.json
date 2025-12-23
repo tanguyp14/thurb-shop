@@ -117,10 +117,22 @@
         "enable_transparent_header_collection": false,
         "collection_color_scheme": "default"
       }
+    },
+    "popup_closed_KVCGQn": {
+      "type": "popupClosed",
+      "name": "Pop-up avec dates",
+      "settings": {
+        "date_debut": "2026-01-01",
+        "date_fin": "2026-01-17",
+        "rich_text": "<h2 style=\"margin: 0 0 12px 0; font-size: 24px; font-weight: 600;\">✨ Pause hivernale</h2>\n  \n  <p style=\"margin: 0 0 16px 0; font-size: 16px; line-height: 1.6;\">\n    Nous fermons du <strong>5 au 17 janvier</strong> pour recharger nos batteries.\n  </p>\n  \n  <p style=\"margin: 0; font-size: 15px; line-height: 1.6; opacity: 0.95;\">\n    Les commandes passées pendant cette période seront traitées à notre retour. \n    <br>Merci de votre patience ! 🎨\n  </p>",
+        "bg_color": "#FFFFFF",
+        "text_color": "#000000"
+      }
     }
   },
   "order": [
     "header_announcements_WbCTVz",
-    "header_section"
+    "header_section",
+    "popup_closed_KVCGQn"
   ]
 }
