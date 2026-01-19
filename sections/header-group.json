@@ -17,7 +17,7 @@
         "announcement_mxxhta": {
           "type": "_announcement",
           "settings": {
-            "text": "COMMANDEZ AU PLUS VITE POUR RECEVOIR VOS COMMANDES AVANT NOËL ! 🎁",
+            "text": "Livraison en 24-48H en France 🇫🇷",
             "link": "shopify://collections/30x40",
             "font": "var(--font-primary--family)",
             "font_size": "var(--font-size--body-md)",
@@ -125,7 +125,7 @@
         "date_debut": "2026-01-01",
         "date_fin": "2026-01-17",
         "rich_text": "<h2 style=\"margin: 0 0 12px 0; font-size: 24px; font-weight: 600;\">✨ Pause hivernale</h2>\n  \n  <p style=\"margin: 0 0 16px 0; font-size: 16px; line-height: 1.6;\">\n    Nous fermons du <strong>5 au 17 janvier</strong> pour recharger nos batteries.\n  </p>\n  \n  <p style=\"margin: 0; font-size: 15px; line-height: 1.6; opacity: 0.95;\">\n    Les commandes passées pendant cette période seront traitées à notre retour. \n    <br>Merci de votre patience ! 🎨\n  </p>",
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "text_color": "#000000"
       }
     }
