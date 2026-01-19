@@ -50,7 +50,7 @@
     "blocks": {
       "213521638856556604": {
         "type": "shopify://apps/snowify/blocks/snow_flake/868294d1-231e-4fde-9fb3-fb3b770d7528",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "melting_snowflakes": true,
           "number_of_snowflakes": 20
