@@ -151,7 +151,7 @@
         "infos_blocks_gBzEnR": {
           "type": "infos_blocks",
           "settings": {
-            "video_bg": "shopify://files/videos/Séquence 3.mp4",
+            "video_bg": "shopify://files/videos/0902(3).mov",
             "text_infos": "thurbshop",
             "text_url": "shopify://collections/all"
           }
@@ -159,7 +159,7 @@
         "infos_blocks_yfcVNy": {
           "type": "infos_blocks",
           "settings": {
-            "image_bg": "shopify://shop_images/BAN-CAEN-V2_2.jpg",
+            "image_bg": "shopify://shop_images/FLBANN_0bcb32f5-3a46-4b2f-8612-7c9b4eb06265.png",
             "text_infos": "firstlove market",
             "text_url": "shopify://collections/firstlove-market"
           }
