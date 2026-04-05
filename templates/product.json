@@ -125,36 +125,6 @@
               },
               "blocks": {}
             },
-            "pc_product_options_product_page_customizer_cDHLiz": {
-              "type": "shopify://apps/pc-product-options/blocks/product-page-customizer/6857ca6c-35eb-4b6f-9d58-a039f31d9406",
-              "settings": {
-                "pc_container_size": 100,
-                "pc_show_options_total": "initial",
-                "pc_customizations_total_text": "Customizations Total:",
-                "pc_show_preloader": "hide",
-                "pc_preloader_color": "",
-                "pc_ignore_redirect_command": true,
-                "pc_basic_label_text_color": "#000000",
-                "pc_basic_label_font_size": 16,
-                "pc_basic_label_bolden": "bold",
-                "pc_basic_label_space_above": 4,
-                "pc_basic_option_background_color": "#ffffff",
-                "pc_basic_option_text_color": "#000000",
-                "pc_basic_option_border_color": "#000000",
-                "pc_basic_option_border_style": "solid",
-                "pc_basic_option_border_width": 1,
-                "pc_basic_option_curve_the_corners": "none",
-                "pc_basic_option_font_size": 14,
-                "pc_basic_option_bolden": "none",
-                "pc_basic_option_width": 90,
-                "pc_basic_option_space_above": 0,
-                "pc_basic_option_space_below": 0,
-                "pc_basic_option_space_inside": 10,
-                "pc_advanced_custom_css": "",
-                "pc_advanced_custom_js": "",
-                "pc_show_image_swatch_preview": false
-              }
-            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -300,7 +270,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>✈️ Livraison sous 3 à 4 jours<br/>📦 Commandes préparées et expédiées dans la semaine suivant l'achat<br/>⛔️ Aucun retour n'est accepté </p>",
+                        "text": "<p>✈️ Livraison sous 3 semaines / 1 mois<br/><br/></p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -812,7 +782,6 @@
             "heading_m7KmQQ",
             "reviews",
             "price_a7krng",
-            "pc_product_options_product_page_customizer_cDHLiz",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "product_description_LfDYCg",
