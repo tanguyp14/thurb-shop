@@ -17,7 +17,7 @@
         "announcement_mxxhta": {
           "type": "_announcement",
           "settings": {
-            "text": "Livraison en 24-48H en France 🇫🇷",
+            "text": "-15% sur tout le shop avec le code SOLDES26 🌴",
             "link": "shopify://collections/30x40",
             "font": "var(--font-primary--family)",
             "font_size": "var(--font-size--body-md)",
