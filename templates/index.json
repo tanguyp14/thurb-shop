@@ -277,112 +277,6 @@
         "padding-block-end": 40
       }
     },
-    "marquee_kjnjWD": {
-      "type": "marquee",
-      "blocks": {
-        "icon_Q3HE7a": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/SITETITRE-12.png",
-            "width": 148,
-            "link": "shopify://collections/los-classicos",
-            "open_in_new_tab": false
-          },
-          "blocks": {}
-        },
-        "icon_PxpzDj": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/HANDMADE.png",
-            "width": 144,
-            "link": "shopify://collections/originaux",
-            "open_in_new_tab": false
-          },
-          "blocks": {}
-        },
-        "icon_68QTkn": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/Plan_de_travail_12_copie_8_2x_d8134b90-8653-4d6e-b62a-1dc8f0b37f09.png",
-            "width": 130,
-            "link": "shopify://collections/collabs",
-            "open_in_new_tab": false
-          },
-          "blocks": {}
-        },
-        "icon_VHKLH4": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/SITETITRE-17.png",
-            "width": 106,
-            "link": "shopify://collections/firstlove-market",
-            "open_in_new_tab": false
-          },
-          "blocks": {}
-        },
-        "icon_qTaNrd": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/SITETITRE-15.png",
-            "width": 132,
-            "link": "shopify://collections/home",
-            "open_in_new_tab": false
-          },
-          "blocks": {}
-        },
-        "icon_874JVn": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/SITETITRE-13.png",
-            "width": 140,
-            "link": "shopify://collections/news",
-            "open_in_new_tab": false
-          },
-          "blocks": {}
-        },
-        "icon_FzhJyB": {
-          "type": "icon",
-          "name": "t:names.icon",
-          "settings": {
-            "icon": "price_tag",
-            "image_upload": "shopify://shop_images/SITETITRE-18.png",
-            "width": 148,
-            "link": "shopify://collections/masterpieces",
-            "open_in_new_tab": false
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "icon_Q3HE7a",
-        "icon_PxpzDj",
-        "icon_68QTkn",
-        "icon_VHKLH4",
-        "icon_qTaNrd",
-        "icon_874JVn",
-        "icon_FzhJyB"
-      ],
-      "name": "t:names.marquee_section",
-      "settings": {
-        "movement_direction": "normal",
-        "color_scheme": "",
-        "padding-block-start": 12,
-        "padding-block-end": 13,
-        "gap_between_elements": 36
-      }
-    },
     "hero_PaKt63": {
       "type": "hero",
       "blocks": {
@@ -488,6 +382,112 @@
         "reflection_opacity": 75,
         "padding-block-start": 0,
         "padding-block-end": 40
+      }
+    },
+    "marquee_kjnjWD": {
+      "type": "marquee",
+      "blocks": {
+        "icon_Q3HE7a": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/SITETITRE-12.png",
+            "width": 148,
+            "link": "shopify://collections/los-classicos",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_PxpzDj": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/HANDMADE.png",
+            "width": 144,
+            "link": "shopify://collections/originaux",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_68QTkn": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/Plan_de_travail_12_copie_8_2x_d8134b90-8653-4d6e-b62a-1dc8f0b37f09.png",
+            "width": 130,
+            "link": "shopify://collections/collabs",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_VHKLH4": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/SITETITRE-17.png",
+            "width": 106,
+            "link": "shopify://collections/firstlove-market",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_qTaNrd": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/SITETITRE-15.png",
+            "width": 132,
+            "link": "shopify://collections/home",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_874JVn": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/SITETITRE-13.png",
+            "width": 140,
+            "link": "shopify://collections/news",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_FzhJyB": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/SITETITRE-18.png",
+            "width": 148,
+            "link": "shopify://collections/masterpieces",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "icon_Q3HE7a",
+        "icon_PxpzDj",
+        "icon_68QTkn",
+        "icon_VHKLH4",
+        "icon_qTaNrd",
+        "icon_874JVn",
+        "icon_FzhJyB"
+      ],
+      "name": "t:names.marquee_section",
+      "settings": {
+        "movement_direction": "normal",
+        "color_scheme": "",
+        "padding-block-start": 12,
+        "padding-block-end": 13,
+        "gap_between_elements": 36
       }
     },
     "section_h8D6HY": {
@@ -3190,8 +3190,8 @@
     "media_with_content_LfPdEJ",
     "tylt_double_visio_RzGqMV",
     "hero_ABjfUV",
-    "marquee_kjnjWD",
     "hero_PaKt63",
+    "marquee_kjnjWD",
     "section_h8D6HY",
     "product_list_8FTidh",
     "hero_p6Bbfd",
