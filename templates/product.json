@@ -270,7 +270,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>✈️ Livraison sous 3 semaines / 1 mois<br/><br/></p>",
+                        "text": "<p>✈️ Livraison sous 1 semaine - Suivis <br/><br/></p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
