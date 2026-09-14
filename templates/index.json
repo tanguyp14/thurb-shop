@@ -508,9 +508,9 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
+            "padding-block-start": 50,
+            "padding-block-end": 53,
+            "padding-inline-start": 77,
             "padding-inline-end": 0
           },
           "blocks": {}
@@ -558,7 +558,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>NEW JESERY THURB</h2>",
+                "text": "<h2>NEW JERSEY THURB</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -583,7 +583,7 @@
             "text_Hat73d": {
               "type": "text",
               "settings": {
-                "text": "<p>Un maillot disgné par THURB  </p>",
+                "text": "<p>Un maillot imaginé et dessiné par THURB, aux lignes wavy qui nous replongent dans les beaux moments de l’été ☀️</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
@@ -598,8 +598,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-start": 42,
+                "padding-block-end": 100,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -609,7 +609,7 @@
               "type": "button",
               "settings": {
                 "label": "Découvrir",
-                "link": "shopify://collections/all",
+                "link": "shopify://products/jersey-thurb-edition-001",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "width": "fit-content",
