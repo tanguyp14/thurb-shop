@@ -16,6 +16,7 @@
       "blocks": {
         "media": {
           "type": "_media-without-appearance",
+          "disabled": true,
           "static": true,
           "settings": {
             "media_type": "image",
@@ -34,15 +35,15 @@
           "settings": {
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 24
+            "gap": 35
           },
           "blocks": {
             "text_tPnNpR": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Rejoins la newsletter pour être informé des nouveautés ! </p>",
-                "width": "fit-content",
+                "text": "<p>Rejoins la newsletter pour être informé des nouveautés !&nbsp;</p>",
+                "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "h3",
@@ -99,7 +100,7 @@
       "name": "t:names.media_with_text",
       "settings": {
         "media_position": "left",
-        "media_width": "medium",
+        "media_width": "narrow",
         "media_height": "auto",
         "section_width": "full-width",
         "extend_media": true,
@@ -482,7 +483,7 @@
         "gap": 12,
         "section_width": "page-width",
         "section_height": "",
-        "color_scheme": "scheme-8",
+        "color_scheme": "scheme-5",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
