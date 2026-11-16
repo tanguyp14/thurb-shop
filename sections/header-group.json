@@ -11,16 +11,16 @@
   "type": "header",
   "name": "Header",
   "sections": {
-    "header_announcements_WbCTVz": {
+    "header_announcements_pgBwtC": {
       "type": "header-announcements",
       "blocks": {
-        "announcement_mxxhta": {
+        "announcement_atgpWC": {
           "type": "_announcement",
           "settings": {
-            "text": "",
-            "link": "shopify://collections/30x40",
-            "font": "var(--font-primary--family)",
-            "font_size": "var(--font-size--body-md)",
+            "text": "<strong>BLACK FRIDAY&nbsp;- FRAIS DE PORTS OFFERTS !&nbsp;</strong>",
+            "link": "",
+            "font": "var(--font-subheading--family)",
+            "font_size": "1rem",
             "weight": "",
             "letter_spacing": "normal",
             "case": "none"
@@ -29,16 +29,16 @@
         }
       },
       "block_order": [
-        "announcement_mxxhta"
+        "announcement_atgpWC"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
-        "speed": 5,
-        "section_width": "full-width",
+        "speed": 3,
+        "section_width": "page-width",
         "color_scheme": "scheme-5",
         "divider_width": 0,
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "padding-block-start": 6,
+        "padding-block-end": 6
       }
     },
     "header_section": {
@@ -131,7 +131,7 @@
     }
   },
   "order": [
-    "header_announcements_WbCTVz",
+    "header_announcements_pgBwtC",
     "header_section",
     "popup_closed_KVCGQn"
   ]
